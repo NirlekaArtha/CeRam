@@ -4,11 +4,88 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="../output.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Creepster&family=Inknut+Antiqua:wght@300;400;500;600;700;800;900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Mochiy+Pop+One&family=Nosifer&display=swap" rel="stylesheet">
     <title>CeRam</title>
 </head>
-<body >
-    <nav class="h-48 bg-slate-800/80 text-white">
-        hello world!
+<body class="bg-background text-white font-inter">
+    <nav class="h-32 w-full bg-gradient-to-b from-accent_1/15 from-30% to-background py-4 px-8 flex justify-between">
+        <h1 class="font-nosifer text-4xl">
+           CERAM 
+        </h1>
+
+        <ul class="flex justify-between w-72">
+            <li class="text-xl">
+                <span class="px-2 py-1 bg-accent_1/55 text-white rounded text-center">Home</span>
+            </li>
+            <li class="text-xl">
+                <span class="px-2 py-1 rounded hover:bg-accent_1/55 hover:text-white">Stories</span>
+            </li>
+            <li class="text-xl">
+                <span class="px-2 py-1 rounded hover:bg-accent_1/55 hover:text-white">Login</span>
+            </li>
+        </ul>
     </nav>
+
+    <header class="flex w-full justify-between px-8 mt-8">
+        <div>
+            <h2 class="font-creepster text-accent_1 text-8xl">
+                Cerita Seram
+            </h2>
+
+            <p class="text-2xl mt-6">
+                Kumpulan cerita seram yang siap membuat 
+            </p>
+            <p class="text-2xl ">
+                bulu kudukmu MERINDING!!!
+            </p>
+
+            <a href="/stories" class="mt-12 block bg-accent_2 w-40 py-3 text-center font-semibold rounded-sm">
+                Baca Sekarang
+            </a>
+        </div>
+
+        <div>
+            <img    src="../../pictures/hero pict.png" 
+                    alt="Hero Picture Desu"
+                    class="w-96"
+            >
+        </div>
+    </header>
+
+    <main class="px-8 mt-8">
+
+        <h3 class="font-inknut text-2xl">
+            Cerita terpopuler
+        </h3>
+        <div>
+            <h4 class="font-medium text-xl">
+                Wanita penunggu 
+            </h4>
+
+            <p class="font-light text-sm text-white/65">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                Id ad sit odit sequi quidem, impedit nostrum dolore vel 
+                ullam fugiat eaque exercitationem optio aut magnam obcaecati, 
+                dicta debitis doloribus quos expedita sapiente?
+            </p>
+
+            <div class="flex ">
+                <svg    xmlns="http://www.w3.org/2000/svg"
+                        width="16" 
+                        height="16" 
+                        fill="#FF9009" 
+                        class="bi bi-star-fill" 
+                        viewBox="0 0 16 16">
+                    <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+                </svg>
+                <p class="text-xs text-center font-medium">
+                    4.9 | 409 Votes
+                </p>
+            </div>
+            
+        </div>
+    </main>
 </body>
 </html>
