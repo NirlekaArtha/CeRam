@@ -8,9 +8,10 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Creepster&family=Inknut+Antiqua:wght@300;400;500;600;700;800;900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Mochiy+Pop+One&family=Nosifer&display=swap" rel="stylesheet">
     <title>CeRam</title>
+    <script defer src="../js/index.js"></script>
 </head>
 <body class="bg-background text-white font-inter">
-    <nav class="h-32 w-full bg-gradient-to-b from-accent_1/15 from-30% to-background py-4 px-8 flex justify-between">
+    <nav id="navbar" class="h-32 w-full bg-gradient-to-b from-accent_1/15 from-30% z-10 py-4 px-8 sticky top-0 flex justify-between transition-all duration-300">
         <h1 class="font-nosifer text-4xl">
            CERAM 
         </h1>
@@ -28,7 +29,7 @@
         </ul>
     </nav>
 
-    <header class="flex w-full justify-between px-24 mt-8">
+    <header class="flex w-full justify-between px-24 mt-6">
         <div>
             <h2 class="font-creepster text-accent_1 text-8xl">
                 Cerita Seram
