@@ -16,7 +16,13 @@
            CERAM 
         </h1>
 
-        <ul class="flex justify-between w-72">
+        <button type="button" class="md:hidden">
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5"/>
+            </svg>
+        </button>
+
+        <ul class="justify-between w-72 hidden md:flex">
             <li class="text-xl">
                 <span class="px-2 py-1 bg-accent_1/55 text-white rounded text-center">Home</span>
             </li>
@@ -29,7 +35,7 @@
         </ul>
     </nav>
 
-    <header class="flex w-full justify-between px-24 mt-6">
+    <header class="flex w-full justify-between px-8 md:px-16 lg:px-24 mt-6">
         <div>
             <h2 class="font-creepster text-accent_1 text-8xl">
                 Cerita Seram
@@ -63,13 +69,13 @@
                 Cerita terpopuler
             </h3>
         
-            <div class="flex bg-accent_1/10 h-60 ">
+            <div class="relative flex bg-accent_1/10 h-60 translate-y-32 sm:translate-y-0">
                 <div class="flex-1 p-6">
                     <h4 class="font-medium text-2xl mb-4">
                         Wanita penunggu 
                     </h4>
         
-                    <p class="font-light text-sm text-white/65 mb-7 w-4/5 h-16 overflow-hidden">
+                    <p class="font-light text-sm txt-white/65 mb-7 w-4/5 h-16 overflow-hidden">
                         Lorem ipsum dolor sit amet consectetur adipisicing elit. 
                         Id ad sit odit sequi quidem, impedit nostrum dolore vel 
                         ullam fugiat eaque exercitationem optio aut magnam obcaecati, 
@@ -103,10 +109,10 @@
 
                 <img src="../../pictures/scary5.jpg" 
                     alt="scary pict"
-                    class="h-full w-52 md:w-80 xl:w-[400px] object-cover">
+                    class="sm:h-full sm:w-52 md:w-80 xl:w-[400px] object-cover sm:static sm:-translate-y-0 absolute top-0 left-0 h-1/2 w-full -translate-y-full">
             </div>
 
-            <a href="/stories" class="absolute right-0 translate-y-8 bg-accent_2 w-32 py-1 text-base text-center font-bold rounded-sm">
+            <a href="/stories" class="scale-[0.6] sm:scale-100 absolute right-0 -bottom-44 sm:-bottom-16 bg-accent_2 w-32 py-1 text-base text-center font-bold rounded-sm">
                 See more
                 <svg class="inline" width="30" height="31" viewBox="0 0 30 31" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <g clip-path="url(#clip0_88_86)">
@@ -123,8 +129,8 @@
         </div>
 
         <!-- Recomendation -->
-        <div class="relative w-full">
-            <h3 class="font-inknut mt-40 text-2xl mb-2">
+        <div class="relative w-full mt-64 sm:mt-40">
+            <h3 class="font-inknut text-2xl mb-2">
                 Untuk anda
             </h3>
 
@@ -134,11 +140,11 @@
                         after:absolute after:-right-8 md:after:-right-16 lg:after:-right-24 after:top-0 after:h-full after:w-24 md:after:w-48 lg:after:w-96
                         after:bg-gradient-to-l after:from-background after:z-10 after:from-15%">
 
-                <div class="flex relative -left-8 md:-left-16 lg:-left-24 w-screen overflow-x-scroll scrollbar-hidden">
+                <div class="flex relative -translate-y-24 sm:-translate-y-12 lg:-translate-y-0 -left-16 sm:-left-12 md:-left-16 lg:-left-24 w-screen overflow-x-scroll scrollbar-hidden">
 
-                    <div class="flex w-max -space-x-24 md:-space-x-8 lg:-space-x-0 lg:gap-8">
+                    <div class="flex w-max -space-x-24 sm:-space-x-8 lg:-space-x-0 lg:gap-8">
                         
-                        <div class="bg-accent_1/10 h-96 shrink-0 w-64 scale-50 md:scale-75 lg:scale-100 rounded-sm">
+                        <div class="bg-accent_1/10 h-96 shrink-0 w-64 scale-50 sm:scale-75 lg:scale-100 rounded-sm">
                             <img 
                                     class="w-full h-40 object-cover object-top"
                                     src="../../pictures/scary5.jpg" 
@@ -181,7 +187,7 @@
                             </div>
                         </div>
 
-                        <div class="bg-accent_1/10 h-96 shrink-0 w-64 scale-50 md:scale-75 lg:scale-100 rounded-sm">
+                        <div class="bg-accent_1/10 h-96 shrink-0 w-64 scale-50 sm:scale-75 lg:scale-100 rounded-sm">
                             <img 
                                     class="w-full h-40 object-cover object-top"
                                     src="../../pictures/scary4.jpg" 
@@ -224,7 +230,7 @@
                             </div>
                         </div>
 
-                        <div class="bg-accent_1/10 h-96 shrink-0 w-64 scale-50 md:scale-75 lg:scale-100 rounded-sm">
+                        <div class="bg-accent_1/10 h-96 shrink-0 w-64 scale-50 sm:scale-75 lg:scale-100 rounded-sm">
                             <img 
                                     class="w-full h-40 object-cover object-top"
                                     src="../../pictures/scary1.jpg" 
@@ -267,7 +273,7 @@
                             </div>
                         </div>
 
-                        <div class="bg-accent_1/10 h-96 shrink-0 w-64 scale-50 md:scale-75 lg:scale-100 rounded-sm">
+                        <div class="bg-accent_1/10 h-96 shrink-0 w-64 scale-50 sm:scale-75 lg:scale-100 rounded-sm">
                             <img 
                                     class="w-full h-40 object-cover object-top"
                                     src="../../pictures/scary3.jpg" 
@@ -310,7 +316,7 @@
                             </div>
                         </div>
 
-                        <div class="bg-accent_1/10 h-96 shrink-0 w-64 scale-50 md:scale-75 lg:scale-100 rounded-sm">
+                        <div class="bg-accent_1/10 h-96 shrink-0 w-64 scale-50 sm:scale-75 lg:scale-100 rounded-sm">
                             <img 
                                     class="w-full h-40 object-cover object-top"
                                     src="../../pictures/scary1.jpg" 
@@ -353,7 +359,7 @@
                             </div>
                         </div>
 
-                        <div class="bg-accent_1/10 h-96 shrink-0 w-64 scale-50 md:scale-75 lg:scale-100 rounded-sm">
+                        <div class="bg-accent_1/10 h-96 shrink-0 w-64 scale-50 sm:scale-75 lg:scale-100 rounded-sm">
                             <img 
                                     class="w-full h-40 object-cover object-top"
                                     src="../../pictures/scary3.jpg" 
@@ -396,7 +402,7 @@
                             </div>
                         </div>
 
-                        <div class="bg-accent_1/10 h-96 shrink-0 w-64 scale-50 md:scale-75 lg:scale-100 rounded-sm">
+                        <div class="bg-accent_1/10 h-96 shrink-0 w-64 scale-50 sm:scale-75 lg:scale-100 rounded-sm">
                             <img 
                                     class="w-full h-40 object-cover object-top"
                                     src="../../pictures/scary1.jpg" 
@@ -439,7 +445,7 @@
                             </div>
                         </div>
 
-                        <div class="bg-accent_1/10 h-96 shrink-0 w-64 scale-50 md:scale-75 lg:scale-100 rounded-sm">
+                        <div class="bg-accent_1/10 h-96 shrink-0 w-64 scale-50 sm:scale-75 lg:scale-100 rounded-sm">
                             <img 
                                     class="w-full h-40 object-cover object-top"
                                     src="../../pictures/scary3.jpg" 
@@ -488,7 +494,7 @@
 
             </div>
 
-            <a href="/stories" class="absolute right-0 -bottom-16 bg-accent_2 w-32 py-1 text-base text-center font-bold rounded-sm">
+            <a href="/stories" class="scale-[0.6] sm:scale-100 absolute right-0 bottom-36 sm:bottom-12 lg:-bottom-16 bg-accent_2 w-32 py-1 text-base text-center font-bold rounded-sm">
                 See more
                 <svg class="inline" width="30" height="31" viewBox="0 0 30 31" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <g clip-path="url(#clip0_88_86)">
@@ -506,8 +512,8 @@
         </div>
 
         <!-- Latest -->
-        <div class="relative w-full">
-            <h3 class="font-inknut mt-40 text-2xl mb-2">
+        <div class="relative w-full -translate-y-20 sm:-translate-y-0 sm:mt-40">
+            <h3 class="font-inknut text-2xl mb-2">
                 Cerita Terbaru
             </h3>
 
@@ -517,11 +523,11 @@
                         after:absolute after:-right-8 md:after:-right-16 lg:after:-right-24 after:top-0 after:h-full after:w-24 md:after:w-48 lg:after:w-96
                         after:bg-gradient-to-l after:from-background after:z-10 after:from-15%">
 
-                <div class="flex relative -left-8 md:-left-16 lg:-left-24 w-screen overflow-x-scroll scrollbar-hidden">
+                <div class="flex relative -translate-y-24 sm:-translate-y-12 lg:-translate-y-0 -left-16 sm:-left-12 md:-left-16 lg:-left-24 w-screen overflow-x-scroll scrollbar-hidden">
 
-                    <div class="flex w-max -space-x-24 md:-space-x-8 lg:-space-x-0 lg:gap-8">
+                    <div class="flex w-max -space-x-24 sm:-space-x-8 lg:-space-x-0 lg:gap-8">
                         
-                        <div class="bg-accent_1/10 h-96 shrink-0 w-64 scale-50 md:scale-75 lg:scale-100 rounded-sm">
+                        <div class="bg-accent_1/10 h-96 shrink-0 w-64 scale-50 sm:scale-75 lg:scale-100 rounded-sm">
                             <img 
                                     class="w-full h-40 object-cover object-top"
                                     src="../../pictures/scary5.jpg" 
@@ -564,7 +570,7 @@
                             </div>
                         </div>
 
-                        <div class="bg-accent_1/10 h-96 shrink-0 w-64 scale-50 md:scale-75 lg:scale-100 rounded-sm">
+                        <div class="bg-accent_1/10 h-96 shrink-0 w-64 scale-50 sm:scale-75 lg:scale-100 rounded-sm">
                             <img 
                                     class="w-full h-40 object-cover object-top"
                                     src="../../pictures/scary4.jpg" 
@@ -607,7 +613,7 @@
                             </div>
                         </div>
 
-                        <div class="bg-accent_1/10 h-96 shrink-0 w-64 scale-50 md:scale-75 lg:scale-100 rounded-sm">
+                        <div class="bg-accent_1/10 h-96 shrink-0 w-64 scale-50 sm:scale-75 lg:scale-100 rounded-sm">
                             <img 
                                     class="w-full h-40 object-cover object-top"
                                     src="../../pictures/scary1.jpg" 
@@ -650,7 +656,7 @@
                             </div>
                         </div>
 
-                        <div class="bg-accent_1/10 h-96 shrink-0 w-64 scale-50 md:scale-75 lg:scale-100 rounded-sm">
+                        <div class="bg-accent_1/10 h-96 shrink-0 w-64 scale-50 sm:scale-75 lg:scale-100 rounded-sm">
                             <img 
                                     class="w-full h-40 object-cover object-top"
                                     src="../../pictures/scary3.jpg" 
@@ -693,7 +699,7 @@
                             </div>
                         </div>
 
-                        <div class="bg-accent_1/10 h-96 shrink-0 w-64 scale-50 md:scale-75 lg:scale-100 rounded-sm">
+                        <div class="bg-accent_1/10 h-96 shrink-0 w-64 scale-50 sm:scale-75 lg:scale-100 rounded-sm">
                             <img 
                                     class="w-full h-40 object-cover object-top"
                                     src="../../pictures/scary1.jpg" 
@@ -736,7 +742,7 @@
                             </div>
                         </div>
 
-                        <div class="bg-accent_1/10 h-96 shrink-0 w-64 scale-50 md:scale-75 lg:scale-100 rounded-sm">
+                        <div class="bg-accent_1/10 h-96 shrink-0 w-64 scale-50 sm:scale-75 lg:scale-100 rounded-sm">
                             <img 
                                     class="w-full h-40 object-cover object-top"
                                     src="../../pictures/scary3.jpg" 
@@ -779,7 +785,7 @@
                             </div>
                         </div>
 
-                        <div class="bg-accent_1/10 h-96 shrink-0 w-64 scale-50 md:scale-75 lg:scale-100 rounded-sm">
+                        <div class="bg-accent_1/10 h-96 shrink-0 w-64 scale-50 sm:scale-75 lg:scale-100 rounded-sm">
                             <img 
                                     class="w-full h-40 object-cover object-top"
                                     src="../../pictures/scary1.jpg" 
@@ -822,7 +828,7 @@
                             </div>
                         </div>
 
-                        <div class="bg-accent_1/10 h-96 shrink-0 w-64 scale-50 md:scale-75 lg:scale-100 rounded-sm">
+                        <div class="bg-accent_1/10 h-96 shrink-0 w-64 scale-50 sm:scale-75 lg:scale-100 rounded-sm">
                             <img 
                                     class="w-full h-40 object-cover object-top"
                                     src="../../pictures/scary3.jpg" 
@@ -871,7 +877,7 @@
 
             </div>
 
-            <a href="/stories" class="absolute right-0 -bottom-16 bg-accent_2 w-32 py-1 text-base text-center font-bold rounded-sm">
+            <a href="/stories" class="scale-[0.6] sm:scale-100 absolute right-0 bottom-36 sm:bottom-12 lg:-bottom-16 bg-accent_2 w-32 py-1 text-base text-center font-bold rounded-sm">
                 See more
                 <svg class="inline" width="30" height="31" viewBox="0 0 30 31" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <g clip-path="url(#clip0_88_86)">
