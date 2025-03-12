@@ -11,7 +11,7 @@
     <script defer src="../js/index.js"></script>
 </head>
 <body class="bg-background text-white font-inter overflow-x-hidden">
-    <nav id="navbar" class="h-32 w-full bg-gradient-to-b from-accent_1/15 from-30% z-20 py-4 px-8 sticky top-0 flex justify-between transition-all duration-300">
+    <nav id="navbar" class="h-32 w-full bg-linear-to-b from-accent1/15 from-30% z-20 py-4 px-8 sticky top-0 flex justify-between transition-all duration-300">
         <h1 class="font-nosifer text-4xl">
            CERAM 
         </h1>
@@ -24,20 +24,20 @@
 
         <ul class="justify-between w-72 hidden md:flex">
             <li class="text-xl">
-                <span class="px-2 py-1 bg-accent_1/55 text-white rounded text-center">Home</span>
+                <a href="#" class="px-2 py-1 bg-accent1/55 text-white rounded-sm text-center cursor-pointer">Home</a>
             </li>
             <li class="text-xl">
-                <span class="px-2 py-1 rounded hover:bg-accent_1/55 hover:text-white">Stories</span>
+                <a href="#" class="px-2 py-1 rounded-sm hover:bg-accent1/55 hover:text-white cursor-pointer">Stories</a>
             </li>
             <li class="text-xl">
-                <span class="px-2 py-1 rounded hover:bg-accent_1/55 hover:text-white">Login</span>
+                <a href="#" class="px-2 py-1 rounded-sm hover:bg-accent1/55 hover:text-white cursor-pointer">Login</a>
             </li>
         </ul>
     </nav>
 
     <header class="flex w-full justify-between px-8 md:px-16 lg:px-24 mt-6">
         <div>
-            <h2 class="font-creepster text-accent_1 text-8xl">
+            <h2 class="font-creepster text-accent1 text-8xl">
                 Cerita Seram
             </h2>
 
@@ -48,7 +48,7 @@
                 bulu kudukmu MERINDING!!!
             </p>
 
-            <a href="/stories" class="mt-12 block bg-accent_2 w-40 py-3 text-center font-semibold rounded-sm">
+            <a href="/stories" class="mt-12 block bg-accent2 w-40 py-3 text-center font-semibold rounded-xs">
                 Baca Sekarang
             </a>
         </div>
@@ -69,7 +69,7 @@
                 Cerita terpopuler
             </h3>
         
-            <div class="relative flex bg-accent_1/10 h-60 translate-y-32 sm:translate-y-0">
+            <div class="relative flex bg-accent1/10 h-60 translate-y-32 sm:translate-y-0">
                 <div class="flex-1 p-6">
                     <h4 class="font-medium text-2xl mb-4">
                         Wanita penunggu 
@@ -100,7 +100,7 @@
                         <p class="font-light text-xs">
                             May, 20th 2023
                         </p>
-                        <a class="text-accent_2 hover:underline hover:font-semibold" href="#">
+                        <a class="text-accent2 hover:underline hover:font-semibold" href="#">
                             Read more &raquo;
                         </a>
                     </div>
@@ -112,7 +112,7 @@
                     class="sm:h-full sm:w-52 md:w-80 xl:w-[400px] object-cover sm:static sm:-translate-y-0 absolute top-0 left-0 h-1/2 w-full -translate-y-full">
             </div>
 
-            <a href="/stories" class="scale-[0.6] sm:scale-100 absolute right-0 -bottom-44 sm:-bottom-16 bg-accent_2 w-32 py-1 text-base text-center font-bold rounded-sm">
+            <a href="/stories" class="scale-[0.6] sm:scale-100 absolute right-0 -bottom-44 sm:-bottom-16 bg-accent2 w-32 py-1 text-base text-center font-bold rounded-xs">
                 See more
                 <svg class="inline" width="30" height="31" viewBox="0 0 30 31" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <g clip-path="url(#clip0_88_86)">
@@ -136,15 +136,15 @@
 
             <div class="relative
                         before:absolute before:-left-8 md:before:-left-16 lg:before:-left-24 before:top-0 before:h-full before:w-24 md:before:w-48 lg:before:w-96 
-                        before:bg-gradient-to-r before:from-background before:z-10 before:from-15%
+                        before:bg-linear-to-r before:from-background before:z-10 before:from-15% before:pointer-events-none
                         after:absolute after:-right-8 md:after:-right-16 lg:after:-right-24 after:top-0 after:h-full after:w-24 md:after:w-48 lg:after:w-96
-                        after:bg-gradient-to-l after:from-background after:z-10 after:from-15%">
+                        after:bg-linear-to-l after:from-background after:z-10 after:from-15% after:pointer-events-none">
 
-                <div class="flex relative -translate-y-24 sm:-translate-y-12 lg:-translate-y-0 -left-16 sm:-left-12 md:-left-16 lg:-left-24 w-screen overflow-x-scroll scrollbar-hidden">
+                <div id="card-scroller" class="flex relative px-0 md:px-12 lg:px-24 lg:pb-4 -translate-y-24 sm:-translate-y-12 lg:-translate-y-0 -left-16 sm:-left-12 md:-left-16 lg:-left-24 w-screen overflow-x-scroll lg:custom-scrollbar">
 
                     <div class="flex w-max -space-x-24 sm:-space-x-8 lg:-space-x-0 lg:gap-8">
                         
-                        <div class="bg-accent_1/10 h-96 shrink-0 w-64 scale-50 sm:scale-75 lg:scale-100 rounded-sm">
+                        <div class="bg-accent1/10 h-96 shrink-0 w-64 scale-50 sm:scale-75 lg:scale-100 rounded-xs">
                             <img 
                                     class="w-full h-40 object-cover object-top"
                                     src="../../pictures/scary5.jpg" 
@@ -179,7 +179,7 @@
                                         <p class="font-light text-xs">
                                             May, 20th 2023
                                         </p>
-                                        <a class="text-accent_2 text-xs hover:underline hover:font-semibold" href="#">
+                                        <a class="text-accent2 text-xs hover:underline hover:font-semibold" href="#">
                                             Read more &raquo;
                                         </a>
                                     </div>
@@ -187,7 +187,7 @@
                             </div>
                         </div>
 
-                        <div class="bg-accent_1/10 h-96 shrink-0 w-64 scale-50 sm:scale-75 lg:scale-100 rounded-sm">
+                        <div class="bg-accent1/10 h-96 shrink-0 w-64 scale-50 sm:scale-75 lg:scale-100 rounded-xs">
                             <img 
                                     class="w-full h-40 object-cover object-top"
                                     src="../../pictures/scary4.jpg" 
@@ -222,7 +222,7 @@
                                         <p class="font-light text-xs">
                                             May, 20th 2023
                                         </p>
-                                        <a class="text-accent_2 text-xs hover:underline hover:font-semibold" href="#">
+                                        <a class="text-accent2 text-xs hover:underline hover:font-semibold" href="#">
                                             Read more &raquo;
                                         </a>
                                     </div>
@@ -230,7 +230,7 @@
                             </div>
                         </div>
 
-                        <div class="bg-accent_1/10 h-96 shrink-0 w-64 scale-50 sm:scale-75 lg:scale-100 rounded-sm">
+                        <div class="bg-accent1/10 h-96 shrink-0 w-64 scale-50 sm:scale-75 lg:scale-100 rounded-xs">
                             <img 
                                     class="w-full h-40 object-cover object-top"
                                     src="../../pictures/scary1.jpg" 
@@ -265,7 +265,7 @@
                                         <p class="font-light text-xs">
                                             May, 20th 2023
                                         </p>
-                                        <a class="text-accent_2 text-xs hover:underline hover:font-semibold" href="#">
+                                        <a class="text-accent2 text-xs hover:underline hover:font-semibold" href="#">
                                             Read more &raquo;
                                         </a>
                                     </div>
@@ -273,7 +273,7 @@
                             </div>
                         </div>
 
-                        <div class="bg-accent_1/10 h-96 shrink-0 w-64 scale-50 sm:scale-75 lg:scale-100 rounded-sm">
+                        <div class="bg-accent1/10 h-96 shrink-0 w-64 scale-50 sm:scale-75 lg:scale-100 rounded-xs">
                             <img 
                                     class="w-full h-40 object-cover object-top"
                                     src="../../pictures/scary3.jpg" 
@@ -308,7 +308,7 @@
                                         <p class="font-light text-xs">
                                             May, 20th 2023
                                         </p>
-                                        <a class="text-accent_2 text-xs hover:underline hover:font-semibold" href="#">
+                                        <a class="text-accent2 text-xs hover:underline hover:font-semibold" href="#">
                                             Read more &raquo;
                                         </a>
                                     </div>
@@ -316,7 +316,7 @@
                             </div>
                         </div>
 
-                        <div class="bg-accent_1/10 h-96 shrink-0 w-64 scale-50 sm:scale-75 lg:scale-100 rounded-sm">
+                        <div class="bg-accent1/10 h-96 shrink-0 w-64 scale-50 sm:scale-75 lg:scale-100 rounded-xs">
                             <img 
                                     class="w-full h-40 object-cover object-top"
                                     src="../../pictures/scary1.jpg" 
@@ -351,7 +351,7 @@
                                         <p class="font-light text-xs">
                                             May, 20th 2023
                                         </p>
-                                        <a class="text-accent_2 text-xs hover:underline hover:font-semibold" href="#">
+                                        <a class="text-accent2 text-xs hover:underline hover:font-semibold" href="#">
                                             Read more &raquo;
                                         </a>
                                     </div>
@@ -359,7 +359,7 @@
                             </div>
                         </div>
 
-                        <div class="bg-accent_1/10 h-96 shrink-0 w-64 scale-50 sm:scale-75 lg:scale-100 rounded-sm">
+                        <div class="bg-accent1/10 h-96 shrink-0 w-64 scale-50 sm:scale-75 lg:scale-100 rounded-xs">
                             <img 
                                     class="w-full h-40 object-cover object-top"
                                     src="../../pictures/scary3.jpg" 
@@ -394,7 +394,7 @@
                                         <p class="font-light text-xs">
                                             May, 20th 2023
                                         </p>
-                                        <a class="text-accent_2 text-xs hover:underline hover:font-semibold" href="#">
+                                        <a class="text-accent2 text-xs hover:underline hover:font-semibold" href="#">
                                             Read more &raquo;
                                         </a>
                                     </div>
@@ -402,7 +402,7 @@
                             </div>
                         </div>
 
-                        <div class="bg-accent_1/10 h-96 shrink-0 w-64 scale-50 sm:scale-75 lg:scale-100 rounded-sm">
+                        <div class="bg-accent1/10 h-96 shrink-0 w-64 scale-50 sm:scale-75 lg:scale-100 rounded-xs">
                             <img 
                                     class="w-full h-40 object-cover object-top"
                                     src="../../pictures/scary1.jpg" 
@@ -437,7 +437,7 @@
                                         <p class="font-light text-xs">
                                             May, 20th 2023
                                         </p>
-                                        <a class="text-accent_2 text-xs hover:underline hover:font-semibold" href="#">
+                                        <a class="text-accent2 text-xs hover:underline hover:font-semibold" href="#">
                                             Read more &raquo;
                                         </a>
                                     </div>
@@ -445,7 +445,7 @@
                             </div>
                         </div>
 
-                        <div class="bg-accent_1/10 h-96 shrink-0 w-64 scale-50 sm:scale-75 lg:scale-100 rounded-sm">
+                        <div class="bg-accent1/10 h-96 shrink-0 w-64 scale-50 sm:scale-75 lg:scale-100 rounded-xs">
                             <img 
                                     class="w-full h-40 object-cover object-top"
                                     src="../../pictures/scary3.jpg" 
@@ -480,7 +480,7 @@
                                         <p class="font-light text-xs">
                                             May, 20th 2023
                                         </p>
-                                        <a class="text-accent_2 text-xs hover:underline hover:font-semibold" href="#">
+                                        <a class="text-accent2 text-xs hover:underline hover:font-semibold" href="#">
                                             Read more &raquo;
                                         </a>
                                     </div>
@@ -494,7 +494,7 @@
 
             </div>
 
-            <a href="/stories" class="scale-[0.6] sm:scale-100 absolute right-0 bottom-36 sm:bottom-12 lg:-bottom-16 bg-accent_2 w-32 py-1 text-base text-center font-bold rounded-sm">
+            <a href="/stories" class="scale-[0.6] sm:scale-100 absolute right-0 bottom-36 sm:bottom-12 lg:-bottom-16 bg-accent2 w-32 py-1 text-base text-center font-bold rounded-xs">
                 See more
                 <svg class="inline" width="30" height="31" viewBox="0 0 30 31" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <g clip-path="url(#clip0_88_86)">
@@ -519,15 +519,15 @@
 
             <div class="relative 
                         before:absolute before:-left-8 md:before:-left-16 lg:before:-left-24 before:top-0 before:h-full before:w-24 md:before:w-48 lg:before:w-96
-                        before:bg-gradient-to-r before:from-background before:z-10 before:from-15%
+                        before:bg-linear-to-r before:from-background before:z-10 before:from-15% before:pointer-events-none
                         after:absolute after:-right-8 md:after:-right-16 lg:after:-right-24 after:top-0 after:h-full after:w-24 md:after:w-48 lg:after:w-96
-                        after:bg-gradient-to-l after:from-background after:z-10 after:from-15%">
+                        after:bg-linear-to-l after:from-background after:z-10 after:from-15% after:pointer-events-none">
 
-                <div class="flex relative -translate-y-24 sm:-translate-y-12 lg:-translate-y-0 -left-16 sm:-left-12 md:-left-16 lg:-left-24 w-screen overflow-x-scroll scrollbar-hidden">
+                <div id="card-scroller" class="flex relative px-0 md:px-12 lg:px-24 lg:pb-4 -translate-y-24 sm:-translate-y-12 lg:-translate-y-0 -left-16 sm:-left-12 md:-left-16 lg:-left-24 w-screen overflow-x-scroll lg:custom-scrollbar">
 
                     <div class="flex w-max -space-x-24 sm:-space-x-8 lg:-space-x-0 lg:gap-8">
                         
-                        <div class="bg-accent_1/10 h-96 shrink-0 w-64 scale-50 sm:scale-75 lg:scale-100 rounded-sm">
+                        <div class="bg-accent1/10 h-96 shrink-0 w-64 scale-50 sm:scale-75 lg:scale-100 rounded-xs">
                             <img 
                                     class="w-full h-40 object-cover object-top"
                                     src="../../pictures/scary5.jpg" 
@@ -562,7 +562,7 @@
                                         <p class="font-light text-xs">
                                             May, 20th 2023
                                         </p>
-                                        <a class="text-accent_2 text-xs hover:underline hover:font-semibold" href="#">
+                                        <a class="text-accent2 text-xs hover:underline hover:font-semibold" href="#">
                                             Read more &raquo;
                                         </a>
                                     </div>
@@ -570,7 +570,7 @@
                             </div>
                         </div>
 
-                        <div class="bg-accent_1/10 h-96 shrink-0 w-64 scale-50 sm:scale-75 lg:scale-100 rounded-sm">
+                        <div class="bg-accent1/10 h-96 shrink-0 w-64 scale-50 sm:scale-75 lg:scale-100 rounded-xs">
                             <img 
                                     class="w-full h-40 object-cover object-top"
                                     src="../../pictures/scary4.jpg" 
@@ -605,7 +605,7 @@
                                         <p class="font-light text-xs">
                                             May, 20th 2023
                                         </p>
-                                        <a class="text-accent_2 text-xs hover:underline hover:font-semibold" href="#">
+                                        <a class="text-accent2 text-xs hover:underline hover:font-semibold" href="#">
                                             Read more &raquo;
                                         </a>
                                     </div>
@@ -613,7 +613,7 @@
                             </div>
                         </div>
 
-                        <div class="bg-accent_1/10 h-96 shrink-0 w-64 scale-50 sm:scale-75 lg:scale-100 rounded-sm">
+                        <div class="bg-accent1/10 h-96 shrink-0 w-64 scale-50 sm:scale-75 lg:scale-100 rounded-xs">
                             <img 
                                     class="w-full h-40 object-cover object-top"
                                     src="../../pictures/scary1.jpg" 
@@ -648,7 +648,7 @@
                                         <p class="font-light text-xs">
                                             May, 20th 2023
                                         </p>
-                                        <a class="text-accent_2 text-xs hover:underline hover:font-semibold" href="#">
+                                        <a class="text-accent2 text-xs hover:underline hover:font-semibold" href="#">
                                             Read more &raquo;
                                         </a>
                                     </div>
@@ -656,7 +656,7 @@
                             </div>
                         </div>
 
-                        <div class="bg-accent_1/10 h-96 shrink-0 w-64 scale-50 sm:scale-75 lg:scale-100 rounded-sm">
+                        <div class="bg-accent1/10 h-96 shrink-0 w-64 scale-50 sm:scale-75 lg:scale-100 rounded-xs">
                             <img 
                                     class="w-full h-40 object-cover object-top"
                                     src="../../pictures/scary3.jpg" 
@@ -691,7 +691,7 @@
                                         <p class="font-light text-xs">
                                             May, 20th 2023
                                         </p>
-                                        <a class="text-accent_2 text-xs hover:underline hover:font-semibold" href="#">
+                                        <a class="text-accent2 text-xs hover:underline hover:font-semibold" href="#">
                                             Read more &raquo;
                                         </a>
                                     </div>
@@ -699,7 +699,7 @@
                             </div>
                         </div>
 
-                        <div class="bg-accent_1/10 h-96 shrink-0 w-64 scale-50 sm:scale-75 lg:scale-100 rounded-sm">
+                        <div class="bg-accent1/10 h-96 shrink-0 w-64 scale-50 sm:scale-75 lg:scale-100 rounded-xs">
                             <img 
                                     class="w-full h-40 object-cover object-top"
                                     src="../../pictures/scary1.jpg" 
@@ -734,7 +734,7 @@
                                         <p class="font-light text-xs">
                                             May, 20th 2023
                                         </p>
-                                        <a class="text-accent_2 text-xs hover:underline hover:font-semibold" href="#">
+                                        <a class="text-accent2 text-xs hover:underline hover:font-semibold" href="#">
                                             Read more &raquo;
                                         </a>
                                     </div>
@@ -742,7 +742,7 @@
                             </div>
                         </div>
 
-                        <div class="bg-accent_1/10 h-96 shrink-0 w-64 scale-50 sm:scale-75 lg:scale-100 rounded-sm">
+                        <div class="bg-accent1/10 h-96 shrink-0 w-64 scale-50 sm:scale-75 lg:scale-100 rounded-xs">
                             <img 
                                     class="w-full h-40 object-cover object-top"
                                     src="../../pictures/scary3.jpg" 
@@ -777,7 +777,7 @@
                                         <p class="font-light text-xs">
                                             May, 20th 2023
                                         </p>
-                                        <a class="text-accent_2 text-xs hover:underline hover:font-semibold" href="#">
+                                        <a class="text-accent2 text-xs hover:underline hover:font-semibold" href="#">
                                             Read more &raquo;
                                         </a>
                                     </div>
@@ -785,7 +785,7 @@
                             </div>
                         </div>
 
-                        <div class="bg-accent_1/10 h-96 shrink-0 w-64 scale-50 sm:scale-75 lg:scale-100 rounded-sm">
+                        <div class="bg-accent1/10 h-96 shrink-0 w-64 scale-50 sm:scale-75 lg:scale-100 rounded-xs">
                             <img 
                                     class="w-full h-40 object-cover object-top"
                                     src="../../pictures/scary1.jpg" 
@@ -820,7 +820,7 @@
                                         <p class="font-light text-xs">
                                             May, 20th 2023
                                         </p>
-                                        <a class="text-accent_2 text-xs hover:underline hover:font-semibold" href="#">
+                                        <a class="text-accent2 text-xs hover:underline hover:font-semibold" href="#">
                                             Read more &raquo;
                                         </a>
                                     </div>
@@ -828,7 +828,7 @@
                             </div>
                         </div>
 
-                        <div class="bg-accent_1/10 h-96 shrink-0 w-64 scale-50 sm:scale-75 lg:scale-100 rounded-sm">
+                        <div class="bg-accent1/10 h-96 shrink-0 w-64 scale-50 sm:scale-75 lg:scale-100 rounded-xs">
                             <img 
                                     class="w-full h-40 object-cover object-top"
                                     src="../../pictures/scary3.jpg" 
@@ -863,7 +863,7 @@
                                         <p class="font-light text-xs">
                                             May, 20th 2023
                                         </p>
-                                        <a class="text-accent_2 text-xs hover:underline hover:font-semibold" href="#">
+                                        <a class="text-accent2 text-xs hover:underline hover:font-semibold" href="#">
                                             Read more &raquo;
                                         </a>
                                     </div>
@@ -877,7 +877,7 @@
 
             </div>
 
-            <a href="/stories" class="scale-[0.6] sm:scale-100 absolute right-0 bottom-36 sm:bottom-12 lg:-bottom-16 bg-accent_2 w-32 py-1 text-base text-center font-bold rounded-sm">
+            <a href="/stories" class="scale-[0.6] sm:scale-100 absolute right-0 bottom-36 sm:bottom-12 lg:-bottom-16 bg-accent2 w-32 py-1 text-base text-center font-bold rounded-xs">
                 See more
                 <svg class="inline" width="30" height="31" viewBox="0 0 30 31" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <g clip-path="url(#clip0_88_86)">
@@ -896,19 +896,19 @@
 
         <!-- Registration -->
         <div class="relative w-screen aspect-video -translate-x-24 bg-cover mt-32 bg-[url('../../pictures/writer.jpeg')]
-                    before:w-full before:h-32 before:bg-gradient-to-b before:from-background before:from-30% before:absolute before:top-0 before:content-['']
-                    after:w-full after:h-32 after:bg-gradient-to-t after:from-background after:from-30% after:absolute after:bottom-0 after:content-['']">
+                    before:w-full before:h-32 before:bg-linear-to-b before:from-background before:from-30% before:absolute before:top-0 before:content-[''] before:pointer-events-none
+                    after:w-full after:h-32 after:bg-linear-to-t after:from-background after:from-30% after:absolute after:bottom-0 after:content-[''] after:pointer-events-none">
             
-            <h3 class="text-6xl font-inknut absolute top-24 left-16">
+            <h3 class="font-inknut text-xl sm:text-2xl md:text-4xl lg:text-6xl absolute top-12 md:top-18 lg:top-24 left-16">
                 Ingin menulis <br> ceritamu sendiri?
             </h3>
 
-            <p class="font-inknut text-5xl absolute top-80 left-16">
-                Daftarkan <span class="font-creepster text-accent_1">JIWAMU</span> <br>
+            <p class="font-inknut text-xl sm:text-2xl md:text-4xl lg:text-5xl absolute top-60 md:top-52 lg:top-80 left-16">
+                Daftarkan <span class="font-creepster text-accent1">JIWAMU</span> <br>
                 sekarang!!!
             </p>
 
-            <a href="/login" class="bg-accent_2 w-32 py-2 text-center font-semibold rounded-md absolute bottom-52 left-16">
+            <a href="/login" class="bg-accent2 w-32 py-2 text-center font-semibold rounded-md absolute md:top-80 lg:top-[28rem] left-16">
                 Buat akun
             </a>
 
@@ -916,7 +916,7 @@
 
     </main>
 
-    <footer class="flex justify-between items-center border-t-2 border-accent_1/15 text-accent_1 w-screen h-24 px-16">
+    <footer class="flex justify-between items-center border-t-2 border-accent1/15 text-accent1 w-screen h-24 px-16">
         <p>
             &copy;2024 <span class="font-bold">Ceram</span>, all rights reserved  
         </p>
