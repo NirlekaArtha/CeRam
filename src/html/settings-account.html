@@ -4,14 +4,72 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Settings-account</title>
+  <link href="../output.css" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Creepster&family=Inknut+Antiqua:wght@300;400;500;600;700;800;900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Mochiy+Pop+One&family=Nosifer&display=swap" rel="stylesheet">
 </head>
-<body>
-  <nav>
-
+<body class="bg-background text-white font-inter overflow-x-hidden flex w-screen h-screen">
+  <nav class="bg-accent1/15 h-full p-8">
+    <h1 class="text-4xl mb-12">
+      Settings
+    </h1>
+    
+    <ul class="flex flex-col gap-8">
+      <li>  
+        <a class="flex gap-4 text text-accent2" href="#">
+          <svg xmlns="http://www.w3.org/2000/svg" 
+               width="24" height="24" viewBox="0 0 24 24" 
+               fill="none" stroke="currentColor" stroke-width="2" 
+               stroke-linecap="round" stroke-linejoin="round" 
+               class="">
+               <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+               <circle cx="12" cy="7" r="4"></circle>
+          </svg>
+          Account Preferences
+        </a>
+      </li>
+      <li>
+        <a class="flex gap-4" href="settings-security.html">
+          <svg xmlns="http://www.w3.org/2000/svg" 
+               width="24" height="24" viewBox="0 0 24 24" 
+               fill="none" stroke="currentColor" stroke-width="2" 
+               stroke-linecap="round" stroke-linejoin="round" 
+               class="">
+               <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+          <path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+          Signin & security
+        </a>
+      </li>
+      <li>
+        <a class="flex gap-4" href="settings-saved.html">
+          <svg xmlns="http://www.w3.org/2000/svg" 
+               width="24" height="24" viewBox="0 0 24 24" 
+               fill="none" stroke="currentColor" stroke-width="2" 
+               stroke-linecap="round" stroke-linejoin="round" 
+               class="">
+          <path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"></path></svg>
+          Saved stories
+        </a>
+      </li>
+      <li>
+        <a class="flex gap-4" href="settings-your-stories.html">
+          <svg xmlns="http://www.w3.org/2000/svg" 
+               width="24" height="24" viewBox="0 0 24 24" 
+               fill="none" stroke="currentColor" stroke-width="2" 
+               stroke-linecap="round" stroke-linejoin="round" 
+               class="feather feather-book">
+               <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
+               <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
+          </svg>
+          Your stories
+        </a>
+      </li>
+    </ul>
   </nav>
 
-  <main>
-    
+  <main class="">
+
   </main>
 </body>
 </html>
