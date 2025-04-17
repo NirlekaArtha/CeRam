@@ -222,6 +222,9 @@
   .sticky {
     position: sticky;
   }
+  .inset-0 {
+    inset: calc(var(--spacing) * 0);
+  }
   .top-0 {
     top: calc(var(--spacing) * 0);
   }
@@ -239,6 +242,9 @@
   }
   .right-2 {
     right: calc(var(--spacing) * 2);
+  }
+  .right-4 {
+    right: calc(var(--spacing) * 4);
   }
   .-bottom-44 {
     bottom: calc(var(--spacing) * -44);
@@ -263,6 +269,12 @@
   }
   .-z-10 {
     z-index: calc(10 * -1);
+  }
+  .z-0 {
+    z-index: 0;
+  }
+  .z-10 {
+    z-index: 10;
   }
   .z-20 {
     z-index: 20;
@@ -473,6 +485,14 @@
   }
   .-translate-x-60 {
     --tw-translate-x: calc(var(--spacing) * -60);
+    translate: var(--tw-translate-x) var(--tw-translate-y);
+  }
+  .-translate-x-full {
+    --tw-translate-x: -100%;
+    translate: var(--tw-translate-x) var(--tw-translate-y);
+  }
+  .translate-x-0 {
+    --tw-translate-x: calc(var(--spacing) * 0);
     translate: var(--tw-translate-x) var(--tw-translate-y);
   }
   .translate-x-10 {
@@ -768,6 +788,9 @@
   }
   .py-14 {
     padding-block: calc(var(--spacing) * 14);
+  }
+  .py-16 {
+    padding-block: calc(var(--spacing) * 16);
   }
   .pt-3 {
     padding-top: calc(var(--spacing) * 3);
@@ -1236,10 +1259,20 @@
       }
     }
   }
+  .sm\:px-20 {
+    @media (width >= 40rem) {
+      padding-inline: calc(var(--spacing) * 20);
+    }
+  }
   .sm\:text-2xl {
     @media (width >= 40rem) {
       font-size: var(--text-2xl);
       line-height: var(--tw-leading, var(--text-2xl--line-height));
+    }
+  }
+  .md\:static {
+    @media (width >= 48rem) {
+      position: static;
     }
   }
   .md\:top-18 {
@@ -1280,6 +1313,20 @@
   .md\:w-80 {
     @media (width >= 48rem) {
       width: calc(var(--spacing) * 80);
+    }
+  }
+  .md\:-translate-x-0 {
+    @media (width >= 48rem) {
+      --tw-translate-x: calc(var(--spacing) * -0);
+      translate: var(--tw-translate-x) var(--tw-translate-y);
+    }
+  }
+  .md\:bg-accent1\/15 {
+    @media (width >= 48rem) {
+      background-color: color-mix(in srgb, #ef1f1f 15%, transparent);
+      @supports (color: color-mix(in lab, red, red)) {
+        background-color: color-mix(in oklab, var(--color-accent1) 15%, transparent);
+      }
     }
   }
   .md\:px-12 {
