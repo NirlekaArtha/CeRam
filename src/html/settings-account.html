@@ -10,7 +10,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Creepster&family=Inknut+Antiqua:wght@300;400;500;600;700;800;900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Mochiy+Pop+One&family=Nosifer&display=swap" rel="stylesheet">
 </head>
 <body class="bg-background text-white font-inter overflow-x-hidden flex w-screen h-screen">
-  <nav class="bg-accent1/15 h-full p-8">
+  <nav class="bg-accent1/15 h-full p-8 hidden md:block">
     <h1 class="text-4xl mb-12">
       Settings
     </h1>
@@ -67,8 +67,13 @@
       </li>
     </ul>
   </nav>
+  <button type="button" id="hamburger-menu" class="md:hidden absolute top-4 left-4">
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16">
+      <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5"/>
+    </svg>
+  </button>
 
-  <main class="py-12 px-20 flex-1">
+  <main class="py-14 px-4 md:px-20 flex-1 w-screen h-screen">
     <div class="flex w-full justify-start">
       <img src="../../pictures/profil-ceram.jpg" alt="profile-pict" 
            class="w-32 h-32 rounded-full border-4 border-accent1/15">
@@ -103,7 +108,7 @@
 
     <div class="w-full mt-10">
       <form action="">
-        <div class="grid grid-cols-2 gap-16">
+        <div class="grid lg:grid-cols-2 grid-cols-1 gap-16">
 
           <div class="flex flex-col gap-1">
             <label for="username" class="text-xl font-medium">
@@ -127,7 +132,7 @@
             </label>
     
             <textarea name="Deskripsi" id="Deskripsi" placeholder="Deskripsi"
-               class="focus:outline-none border-[1.5px] border-white/75 rounded-sm w-full p-2 flex-1">Hello there!</textarea>
+               class="focus:outline-none border-[1.5px] border-white/75 rounded-sm w-full p-2 flex-1 min-h-32">Hello there!</textarea>
           </div>
 
         </div>
