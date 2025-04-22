@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
-  const navbar = document.getElementById("navbar"); 
+  const navbar = document.getElementById("nav-bar"); 
   const cardScroller = document.getElementById("card-scroller");
 
   window.addEventListener("scroll", function () {
