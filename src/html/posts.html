@@ -9,6 +9,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Creepster&family=Inknut+Antiqua:wght@300;400;500;600;700;800;900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Mochiy+Pop+One&family=Nosifer&display=swap" rel="stylesheet">
     <title>CeRam - Stories</title>
     <script defer src="../js/index.js"></script>
+    <script defer src="../js/toggle-nav-bar.js"></script>
 </head>
 <body class="bg-background text-white font-inter overflow-x-hidden">
     <nav id="navbar" class="h-32 w-full bg-linear-to-b from-accent1/15 from-30% z-20 py-4 px-8 sticky top-0 flex justify-between transition-all duration-300">
@@ -16,13 +17,16 @@
            CERAM 
         </h1>
 
-        <button type="button" class="md:hidden">
+        <button type="button" id="hamburger-menu" class="md:hidden">
             <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16">
                 <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5"/>
             </svg>
         </button>
 
-        <ul class="justify-between w-72 hidden md:flex">
+        <ul id="nav-bar" class="md:justify-between justify-start gap-8 md-gap-0 -translate-x-full md:-translate-x-0 p-8 md:p-0 flex w-72 absolute top-0 left-0 h-screen md:h-full bg-accent1dark md:backdrop-blur-none md:bg-transparent flex-col md:flex-row md:static">
+            <button type="button" class="absolute top-4 right-4 md:hidden" id="close-nav">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+            </button>   
             <li class="text-xl">
                 <a href="./" class="px-2 py-1 hover:bg-accent1/55 text-white rounded-sm text-center cursor-pointer">Home</a>
             </li>
