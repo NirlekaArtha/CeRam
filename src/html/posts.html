@@ -9,20 +9,24 @@
     <link href="https://fonts.googleapis.com/css2?family=Creepster&family=Inknut+Antiqua:wght@300;400;500;600;700;800;900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Mochiy+Pop+One&family=Nosifer&display=swap" rel="stylesheet">
     <title>CeRam - Stories</title>
     <script defer src="../js/index.js"></script>
+    <script defer src="../js/toggle-nav-bar.js"></script>
 </head>
 <body class="bg-background text-white font-inter overflow-x-hidden">
-    <nav id="navbar" class="h-32 w-full bg-linear-to-b from-accent1/15 from-30% z-20 py-4 px-8 sticky top-0 flex justify-between transition-all duration-300">
+    <nav id="navbar" class="h-32 w-full bg-linear-to-b from-accent1/15 from-30% z-20 py-4 px-8 sticky top-0 flex items-center justify-between transition-all duration-300">
         <h1 class="font-nosifer text-4xl">
            CERAM 
         </h1>
 
-        <button type="button" class="md:hidden">
+        <button type="button" id="hamburger-menu" class="md:hidden">
             <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16">
                 <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5"/>
             </svg>
         </button>
 
-        <ul class="justify-between w-72 hidden md:flex">
+        <ul id="nav-bar" class="md:justify-between justify-start gap-8 md-gap-0 -translate-x-full md:-translate-x-0 p-8 md:p-0 flex w-72 absolute top-0 left-0 h-screen md:h-full bg-accent1dark md:backdrop-blur-none md:bg-transparent flex-col md:flex-row md:static">
+            <button type="button" class="absolute top-4 right-4 md:hidden" id="close-nav">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+            </button>   
             <li class="text-xl">
                 <a href="./" class="px-2 py-1 hover:bg-accent1/55 text-white rounded-sm text-center cursor-pointer">Home</a>
             </li>
@@ -35,8 +39,8 @@
         </ul>
     </nav>
 
-    <header class="flex flex-col w-full h-56 items-center justify-between px-8 md:px-16 lg:px-24 mt-6">
-        <div class="flex relative w-96 justify-center items-center h-8">
+    <header class="flex flex-col gap-8 w-full h-56 items-center justify-between px-8 md:px-16 lg:px-24 mt-6">
+        <div class="flex relative w-full max-w-96 justify-center items-center min-h-8">
             <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="currentColor" class="bi bi-list text-accent1 absolute left-2" stroke="currentColor" stroke-width="0.5" viewBox="0 0 16 16">
                 <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5"/>
             </svg>
@@ -57,8 +61,8 @@
     </header>
 
     <main class="relative w-screen px-8 md:px-16 lg:px-24 mt-32">
-        <div class="grid grid-cols-4 gap-8">
-            <div class="bg-accent1/10 h-96 shrink-0 w-64 scale-50 sm:scale-75 lg:scale-100 rounded-sm shadow-[2px_2px_4px_0px_black] overflow-hidden">
+        <div class="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 w-full place-items-center">
+            <div class="bg-accent1/10 h-96 shrink-0 w-64 rounded-sm shadow-[2px_2px_4px_0px_black] overflow-hidden">
                 <img 
                         class="w-full h-40 object-cover object-top"
                         src="../../pictures/scary5.jpg" 
@@ -101,7 +105,7 @@
                 </div>
             </div>
 
-            <div class="bg-accent1/10 h-96 shrink-0 w-64 scale-50 sm:scale-75 lg:scale-100 rounded-sm shadow-[2px_2px_4px_0px_black] overflow-hidden">
+            <div class="bg-accent1/10 h-96 shrink-0 w-64 rounded-sm shadow-[2px_2px_4px_0px_black] overflow-hidden">
                 <img 
                         class="w-full h-40 object-cover object-top"
                         src="../../pictures/scary4.jpg" 
@@ -144,7 +148,7 @@
                 </div>
             </div>
 
-            <div class="bg-accent1/10 h-96 shrink-0 w-64 scale-50 sm:scale-75 lg:scale-100 rounded-sm shadow-[2px_2px_4px_0px_black] overflow-hidden">
+            <div class="bg-accent1/10 h-96 shrink-0 w-64 rounded-sm shadow-[2px_2px_4px_0px_black] overflow-hidden">
                 <img 
                         class="w-full h-40 object-cover object-top"
                         src="../../pictures/scary1.jpg" 
@@ -187,7 +191,7 @@
                 </div>
             </div>
 
-            <div class="bg-accent1/10 h-96 shrink-0 w-64 scale-50 sm:scale-75 lg:scale-100 rounded-sm shadow-[2px_2px_4px_0px_black] overflow-hidden">
+            <div class="bg-accent1/10 h-96 shrink-0 w-64 rounded-sm shadow-[2px_2px_4px_0px_black] overflow-hidden">
                 <img 
                         class="w-full h-40 object-cover object-top"
                         src="../../pictures/scary3.jpg" 
@@ -230,7 +234,7 @@
                 </div>
             </div>
 
-            <div class="bg-accent1/10 h-96 shrink-0 w-64 scale-50 sm:scale-75 lg:scale-100 rounded-sm shadow-[2px_2px_4px_0px_black] overflow-hidden">
+            <div class="bg-accent1/10 h-96 shrink-0 w-64 rounded-sm shadow-[2px_2px_4px_0px_black] overflow-hidden">
                 <img 
                         class="w-full h-40 object-cover object-top"
                         src="../../pictures/scary1.jpg" 
@@ -273,7 +277,7 @@
                 </div>
             </div>
 
-            <div class="bg-accent1/10 h-96 shrink-0 w-64 scale-50 sm:scale-75 lg:scale-100 rounded-sm shadow-[2px_2px_4px_0px_black] overflow-hidden">
+            <div class="bg-accent1/10 h-96 shrink-0 w-64 rounded-sm shadow-[2px_2px_4px_0px_black] overflow-hidden">
                 <img 
                         class="w-full h-40 object-cover object-top"
                         src="../../pictures/scary3.jpg" 
@@ -316,7 +320,7 @@
                 </div>
             </div>
             
-            <div class="bg-accent1/10 h-96 shrink-0 w-64 scale-50 sm:scale-75 lg:scale-100 rounded-sm shadow-[2px_2px_4px_0px_black] overflow-hidden">
+            <div class="bg-accent1/10 h-96 shrink-0 w-64 rounded-sm shadow-[2px_2px_4px_0px_black] overflow-hidden">
                 <img 
                         class="w-full h-40 object-cover object-top"
                         src="../../pictures/scary5.jpg" 
@@ -359,7 +363,7 @@
                 </div>
             </div>
 
-            <div class="bg-accent1/10 h-96 shrink-0 w-64 scale-50 sm:scale-75 lg:scale-100 rounded-sm shadow-[2px_2px_4px_0px_black] overflow-hidden">
+            <div class="bg-accent1/10 h-96 shrink-0 w-64 rounded-sm shadow-[2px_2px_4px_0px_black] overflow-hidden">
                 <img 
                         class="w-full h-40 object-cover object-top"
                         src="../../pictures/scary4.jpg" 
@@ -402,7 +406,7 @@
                 </div>
             </div>
 
-            <div class="bg-accent1/10 h-96 shrink-0 w-64 scale-50 sm:scale-75 lg:scale-100 rounded-sm shadow-[2px_2px_4px_0px_black] overflow-hidden">
+            <div class="bg-accent1/10 h-96 shrink-0 w-64 rounded-sm shadow-[2px_2px_4px_0px_black] overflow-hidden">
                 <img 
                         class="w-full h-40 object-cover object-top"
                         src="../../pictures/scary1.jpg" 
@@ -445,7 +449,7 @@
                 </div>
             </div>
 
-            <div class="bg-accent1/10 h-96 shrink-0 w-64 scale-50 sm:scale-75 lg:scale-100 rounded-sm shadow-[2px_2px_4px_0px_black] overflow-hidden">
+            <div class="bg-accent1/10 h-96 shrink-0 w-64 rounded-sm shadow-[2px_2px_4px_0px_black] overflow-hidden">
                 <img 
                         class="w-full h-40 object-cover object-top"
                         src="../../pictures/scary3.jpg" 
@@ -488,7 +492,7 @@
                 </div>
             </div>
 
-            <div class="bg-accent1/10 h-96 shrink-0 w-64 scale-50 sm:scale-75 lg:scale-100 rounded-sm shadow-[2px_2px_4px_0px_black] overflow-hidden">
+            <div class="bg-accent1/10 h-96 shrink-0 w-64 rounded-sm shadow-[2px_2px_4px_0px_black] overflow-hidden">
                 <img 
                         class="w-full h-40 object-cover object-top"
                         src="../../pictures/scary1.jpg" 
@@ -531,7 +535,7 @@
                 </div>
             </div>
 
-            <div class="bg-accent1/10 h-96 shrink-0 w-64 scale-50 sm:scale-75 lg:scale-100 rounded-sm shadow-[2px_2px_4px_0px_black] overflow-hidden">
+            <div class="bg-accent1/10 h-96 shrink-0 w-64 rounded-sm shadow-[2px_2px_4px_0px_black] overflow-hidden">
                 <img 
                         class="w-full h-40 object-cover object-top"
                         src="../../pictures/scary3.jpg" 
@@ -574,7 +578,7 @@
                 </div>
             </div>
 
-            <div class="bg-accent1/10 h-96 shrink-0 w-64 scale-50 sm:scale-75 lg:scale-100 rounded-sm shadow-[2px_2px_4px_0px_black] overflow-hidden">
+            <div class="bg-accent1/10 h-96 shrink-0 w-64 rounded-sm shadow-[2px_2px_4px_0px_black] overflow-hidden">
                 <img 
                         class="w-full h-40 object-cover object-top"
                         src="../../pictures/scary5.jpg" 
@@ -617,7 +621,7 @@
                 </div>
             </div>
 
-            <div class="bg-accent1/10 h-96 shrink-0 w-64 scale-50 sm:scale-75 lg:scale-100 rounded-sm shadow-[2px_2px_4px_0px_black] overflow-hidden">
+            <div class="bg-accent1/10 h-96 shrink-0 w-64 rounded-sm shadow-[2px_2px_4px_0px_black] overflow-hidden">
                 <img 
                         class="w-full h-40 object-cover object-top"
                         src="../../pictures/scary4.jpg" 
@@ -660,7 +664,7 @@
                 </div>
             </div>
 
-            <div class="bg-accent1/10 h-96 shrink-0 w-64 scale-50 sm:scale-75 lg:scale-100 rounded-sm shadow-[2px_2px_4px_0px_black] overflow-hidden">
+            <div class="bg-accent1/10 h-96 shrink-0 w-64 rounded-sm shadow-[2px_2px_4px_0px_black] overflow-hidden">
                 <img 
                         class="w-full h-40 object-cover object-top"
                         src="../../pictures/scary1.jpg" 
@@ -703,7 +707,7 @@
                 </div>
             </div>
 
-            <div class="bg-accent1/10 h-96 shrink-0 w-64 scale-50 sm:scale-75 lg:scale-100 rounded-sm shadow-[2px_2px_4px_0px_black] overflow-hidden">
+            <div class="bg-accent1/10 h-96 shrink-0 w-64 rounded-sm shadow-[2px_2px_4px_0px_black] overflow-hidden">
                 <img 
                         class="w-full h-40 object-cover object-top"
                         src="../../pictures/scary3.jpg" 
@@ -746,7 +750,7 @@
                 </div>
             </div>
 
-            <div class="bg-accent1/10 h-96 shrink-0 w-64 scale-50 sm:scale-75 lg:scale-100 rounded-sm shadow-[2px_2px_4px_0px_black] overflow-hidden">
+            <div class="bg-accent1/10 h-96 shrink-0 w-64 rounded-sm shadow-[2px_2px_4px_0px_black] overflow-hidden">
                 <img 
                         class="w-full h-40 object-cover object-top"
                         src="../../pictures/scary1.jpg" 
@@ -789,7 +793,7 @@
                 </div>
             </div>
 
-            <div class="bg-accent1/10 h-96 shrink-0 w-64 scale-50 sm:scale-75 lg:scale-100 rounded-sm shadow-[2px_2px_4px_0px_black] overflow-hidden">
+            <div class="bg-accent1/10 h-96 shrink-0 w-64 rounded-sm shadow-[2px_2px_4px_0px_black] overflow-hidden">
                 <img 
                         class="w-full h-40 object-cover object-top"
                         src="../../pictures/scary3.jpg" 
@@ -832,7 +836,7 @@
                 </div>
             </div>
             
-            <div class="bg-accent1/10 h-96 shrink-0 w-64 scale-50 sm:scale-75 lg:scale-100 rounded-sm shadow-[2px_2px_4px_0px_black] overflow-hidden">
+            <div class="bg-accent1/10 h-96 shrink-0 w-64 rounded-sm shadow-[2px_2px_4px_0px_black] overflow-hidden">
                 <img 
                         class="w-full h-40 object-cover object-top"
                         src="../../pictures/scary5.jpg" 
@@ -875,7 +879,7 @@
                 </div>
             </div>
 
-            <div class="bg-accent1/10 h-96 shrink-0 w-64 scale-50 sm:scale-75 lg:scale-100 rounded-sm shadow-[2px_2px_4px_0px_black] overflow-hidden">
+            <div class="bg-accent1/10 h-96 shrink-0 w-64 rounded-sm shadow-[2px_2px_4px_0px_black] overflow-hidden">
                 <img 
                         class="w-full h-40 object-cover object-top"
                         src="../../pictures/scary4.jpg" 
@@ -918,7 +922,7 @@
                 </div>
             </div>
 
-            <div class="bg-accent1/10 h-96 shrink-0 w-64 scale-50 sm:scale-75 lg:scale-100 rounded-sm shadow-[2px_2px_4px_0px_black] overflow-hidden">
+            <div class="bg-accent1/10 h-96 shrink-0 w-64 rounded-sm shadow-[2px_2px_4px_0px_black] overflow-hidden">
                 <img 
                         class="w-full h-40 object-cover object-top"
                         src="../../pictures/scary1.jpg" 
@@ -961,7 +965,7 @@
                 </div>
             </div>
 
-            <div class="bg-accent1/10 h-96 shrink-0 w-64 scale-50 sm:scale-75 lg:scale-100 rounded-sm shadow-[2px_2px_4px_0px_black] overflow-hidden">
+            <div class="bg-accent1/10 h-96 shrink-0 w-64 rounded-sm shadow-[2px_2px_4px_0px_black] overflow-hidden">
                 <img 
                         class="w-full h-40 object-cover object-top"
                         src="../../pictures/scary3.jpg" 
@@ -1004,7 +1008,7 @@
                 </div>
             </div>
 
-            <div class="bg-accent1/10 h-96 shrink-0 w-64 scale-50 sm:scale-75 lg:scale-100 rounded-sm shadow-[2px_2px_4px_0px_black] overflow-hidden">
+            <div class="bg-accent1/10 h-96 shrink-0 w-64 rounded-sm shadow-[2px_2px_4px_0px_black] overflow-hidden">
                 <img 
                         class="w-full h-40 object-cover object-top"
                         src="../../pictures/scary1.jpg" 
@@ -1047,7 +1051,7 @@
                 </div>
             </div>
 
-            <div class="bg-accent1/10 h-96 shrink-0 w-64 scale-50 sm:scale-75 lg:scale-100 rounded-sm shadow-[2px_2px_4px_0px_black] overflow-hidden">
+            <div class="bg-accent1/10 h-96 shrink-0 w-64 rounded-sm shadow-[2px_2px_4px_0px_black] overflow-hidden">
                 <img 
                         class="w-full h-40 object-cover object-top"
                         src="../../pictures/scary3.jpg" 
@@ -1093,7 +1097,7 @@
         </div>
     </main>
 
-    <footer class="flex justify-between items-center border-t-2 border-accent1/15 text-accent1 mt-8 w-screen h-24 px-16">
+    <footer class="flex flex-col sm:flex-row justify-around sm:justify-between items-center border-t-2 border-accent1/15 text-accent1 w-screen h-24 px-4 sm:px-8 md:px-16">
         <p>
             &copy;2024 <span class="font-bold">Ceram</span>, all rights reserved  
         </p>

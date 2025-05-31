@@ -9,20 +9,24 @@
     <link href="https://fonts.googleapis.com/css2?family=Creepster&family=Inknut+Antiqua:wght@300;400;500;600;700;800;900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Mochiy+Pop+One&family=Nosifer&display=swap" rel="stylesheet">
     <title>CeRam</title>
     <script defer src="../js/index.js"></script>
+    <script defer src="../js/toggle-nav-bar.js"></script>
 </head>
 <body class="bg-background text-white font-inter overflow-x-hidden">
-    <nav id="navbar" class="h-32 w-full bg-linear-to-b from-accent1/15 from-30% z-20 py-4 px-8 sticky top-0 flex justify-between transition-all duration-300">
+    <nav id="navbar" class="h-32 w-full bg-linear-to-b from-accent1/15 from-30% z-20 py-4 px-8 sticky top-0 flex justify-between items-center transition-all duration-300">
         <h1 class="font-nosifer text-4xl">
            CERAM 
         </h1>
 
-        <button type="button" class="md:hidden">
+        <button type="button" id="hamburger-menu" class="md:hidden">
             <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16">
                 <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5"/>
             </svg>
         </button>
 
-        <ul class="justify-between w-72 hidden md:flex">
+        <ul id="nav-bar" class="md:justify-between justify-start gap-8 md-gap-0 -translate-x-full md:-translate-x-0 p-8 md:p-0 flex w-72 absolute top-0 left-0 h-screen md:h-full bg-accent1dark md:backdrop-blur-none md:bg-transparent flex-col md:flex-row md:static">
+            <button type="button" class="absolute top-4 right-4 md:hidden" id="close-nav">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+            </button>
             <li class="text-xl">
                 <a href="./" class="px-2 py-1 bg-accent1/55 text-white rounded-sm text-center cursor-pointer">Home</a>
             </li>
@@ -61,10 +65,10 @@
         </div>
     </header>
 
-    <main class="relative w-screen px-8 md:px-16 lg:px-24 mt-32">
+    <main class="relative flex flex-col justify-start gap-24 sm:gap-32 w-screen px-8 md:px-16 lg:px-24 mt-32">
         
         <!-- Headline -->
-        <div class="relative w-full">
+        <div class="relative w-full mb-32 sm:mb-0">
             <h3 class="font-inknut text-2xl mb-2">
                 Cerita terpopuler
             </h3>
@@ -112,7 +116,7 @@
                     class="sm:h-full sm:w-52 md:w-80 xl:w-[400px] object-cover sm:static sm:-translate-y-0 absolute top-0 left-0 h-1/2 w-full -translate-y-full">
             </div>
 
-            <a href="/stories" class="scale-[0.6] sm:scale-100 absolute right-0 -bottom-44 sm:-bottom-16 bg-accent2 w-32 py-1 text-base text-center font-bold rounded-xs">
+            <a href="/stories" class="scale-75 sm:scale-100 absolute right-0 -bottom-44 sm:-bottom-16  bg-accent2 w-32 py-1 text-base text-center font-bold rounded-xs">
                 See more
                 <svg class="inline" width="30" height="31" viewBox="0 0 30 31" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <g clip-path="url(#clip0_88_86)">
@@ -129,22 +133,22 @@
         </div>
 
         <!-- Recomendation -->
-        <div class="relative w-full mt-64 sm:mt-40">
+        <div class="relative w-full">
             <h3 class="font-inknut text-2xl mb-2">
                 Untuk anda
             </h3>
 
-            <div class="relative
+            <div class="relative w-full
                         before:absolute before:-left-8 md:before:-left-16 lg:before:-left-24 before:top-0 before:h-full before:w-24 md:before:w-48 lg:before:w-96 
                         before:bg-linear-to-r before:from-background before:z-10 before:from-15% before:pointer-events-none
                         after:absolute after:-right-8 md:after:-right-16 lg:after:-right-24 after:top-0 after:h-full after:w-24 md:after:w-48 lg:after:w-96
                         after:bg-linear-to-l after:from-background after:z-10 after:from-15% after:pointer-events-none">
 
-                <div id="card-scroller" class="flex relative px-0 md:px-12 lg:px-24 lg:pb-4 -translate-y-24 sm:-translate-y-12 lg:-translate-y-0 -left-16 sm:-left-12 md:-left-16 lg:-left-24 w-screen overflow-x-scroll lg:custom-scrollbar">
+                <div id="card-scroller" class="flex relative px-4  pb-4  w-full overflow-x-scroll custom-scrollbar">
 
-                    <div class="flex w-max -space-x-24 sm:-space-x-8 lg:-space-x-0 lg:gap-8">
+                    <div class="flex w-max gap-8">
                         
-                        <div class="bg-accent1/10 h-96 shrink-0 w-64 scale-50 sm:scale-75 lg:scale-100 rounded-xs">
+                        <div class="bg-accent1/10 h-96 shrink-0 w-64  rounded-xs">
                             <img 
                                     class="w-full h-40 object-cover object-top"
                                     src="../../pictures/scary5.jpg" 
@@ -187,7 +191,7 @@
                             </div>
                         </div>
 
-                        <div class="bg-accent1/10 h-96 shrink-0 w-64 scale-50 sm:scale-75 lg:scale-100 rounded-xs">
+                        <div class="bg-accent1/10 h-96 shrink-0 w-64  rounded-xs">
                             <img 
                                     class="w-full h-40 object-cover object-top"
                                     src="../../pictures/scary4.jpg" 
@@ -230,7 +234,7 @@
                             </div>
                         </div>
 
-                        <div class="bg-accent1/10 h-96 shrink-0 w-64 scale-50 sm:scale-75 lg:scale-100 rounded-xs">
+                        <div class="bg-accent1/10 h-96 shrink-0 w-64  rounded-xs">
                             <img 
                                     class="w-full h-40 object-cover object-top"
                                     src="../../pictures/scary1.jpg" 
@@ -273,7 +277,7 @@
                             </div>
                         </div>
 
-                        <div class="bg-accent1/10 h-96 shrink-0 w-64 scale-50 sm:scale-75 lg:scale-100 rounded-xs">
+                        <div class="bg-accent1/10 h-96 shrink-0 w-64  rounded-xs">
                             <img 
                                     class="w-full h-40 object-cover object-top"
                                     src="../../pictures/scary3.jpg" 
@@ -316,7 +320,7 @@
                             </div>
                         </div>
 
-                        <div class="bg-accent1/10 h-96 shrink-0 w-64 scale-50 sm:scale-75 lg:scale-100 rounded-xs">
+                        <div class="bg-accent1/10 h-96 shrink-0 w-64  rounded-xs">
                             <img 
                                     class="w-full h-40 object-cover object-top"
                                     src="../../pictures/scary1.jpg" 
@@ -359,7 +363,7 @@
                             </div>
                         </div>
 
-                        <div class="bg-accent1/10 h-96 shrink-0 w-64 scale-50 sm:scale-75 lg:scale-100 rounded-xs">
+                        <div class="bg-accent1/10 h-96 shrink-0 w-64  rounded-xs">
                             <img 
                                     class="w-full h-40 object-cover object-top"
                                     src="../../pictures/scary3.jpg" 
@@ -402,7 +406,7 @@
                             </div>
                         </div>
 
-                        <div class="bg-accent1/10 h-96 shrink-0 w-64 scale-50 sm:scale-75 lg:scale-100 rounded-xs">
+                        <div class="bg-accent1/10 h-96 shrink-0 w-64  rounded-xs">
                             <img 
                                     class="w-full h-40 object-cover object-top"
                                     src="../../pictures/scary1.jpg" 
@@ -445,7 +449,7 @@
                             </div>
                         </div>
 
-                        <div class="bg-accent1/10 h-96 shrink-0 w-64 scale-50 sm:scale-75 lg:scale-100 rounded-xs">
+                        <div class="bg-accent1/10 h-96 shrink-0 w-64  rounded-xs">
                             <img 
                                     class="w-full h-40 object-cover object-top"
                                     src="../../pictures/scary3.jpg" 
@@ -494,7 +498,7 @@
 
             </div>
 
-            <a href="/stories" class="scale-[0.6] sm:scale-100 absolute right-0 bottom-36 sm:bottom-12 lg:-bottom-16 bg-accent2 w-32 py-1 text-base text-center font-bold rounded-xs">
+            <a href="/stories" class="scale-75 sm:scale-100 absolute right-0 -bottom-12 sm:-bottom-16 bg-accent2 w-32 py-1 text-base text-center font-bold rounded-xs">
                 See more
                 <svg class="inline" width="30" height="31" viewBox="0 0 30 31" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <g clip-path="url(#clip0_88_86)">
@@ -512,22 +516,22 @@
         </div>
 
         <!-- Latest -->
-        <div class="relative w-full -translate-y-20 sm:-translate-y-0 sm:mt-40">
+        <div class="relative w-full">
             <h3 class="font-inknut text-2xl mb-2">
-                Cerita Terbaru
+                Terbaru
             </h3>
 
-            <div class="relative 
-                        before:absolute before:-left-8 md:before:-left-16 lg:before:-left-24 before:top-0 before:h-full before:w-24 md:before:w-48 lg:before:w-96
+            <div class="relative w-full
+                        before:absolute before:-left-8 md:before:-left-16 lg:before:-left-24 before:top-0 before:h-full before:w-24 md:before:w-48 lg:before:w-96 
                         before:bg-linear-to-r before:from-background before:z-10 before:from-15% before:pointer-events-none
                         after:absolute after:-right-8 md:after:-right-16 lg:after:-right-24 after:top-0 after:h-full after:w-24 md:after:w-48 lg:after:w-96
                         after:bg-linear-to-l after:from-background after:z-10 after:from-15% after:pointer-events-none">
 
-                <div id="card-scroller" class="flex relative px-0 md:px-12 lg:px-24 lg:pb-4 -translate-y-24 sm:-translate-y-12 lg:-translate-y-0 -left-16 sm:-left-12 md:-left-16 lg:-left-24 w-screen overflow-x-scroll lg:custom-scrollbar">
+                <div id="card-scroller" class="flex relative px-4  pb-4  w-full overflow-x-scroll custom-scrollbar">
 
-                    <div class="flex w-max -space-x-24 sm:-space-x-8 lg:-space-x-0 lg:gap-8">
+                    <div class="flex w-max gap-8">
                         
-                        <div class="bg-accent1/10 h-96 shrink-0 w-64 scale-50 sm:scale-75 lg:scale-100 rounded-xs">
+                        <div class="bg-accent1/10 h-96 shrink-0 w-64  rounded-xs">
                             <img 
                                     class="w-full h-40 object-cover object-top"
                                     src="../../pictures/scary5.jpg" 
@@ -570,7 +574,7 @@
                             </div>
                         </div>
 
-                        <div class="bg-accent1/10 h-96 shrink-0 w-64 scale-50 sm:scale-75 lg:scale-100 rounded-xs">
+                        <div class="bg-accent1/10 h-96 shrink-0 w-64  rounded-xs">
                             <img 
                                     class="w-full h-40 object-cover object-top"
                                     src="../../pictures/scary4.jpg" 
@@ -613,7 +617,7 @@
                             </div>
                         </div>
 
-                        <div class="bg-accent1/10 h-96 shrink-0 w-64 scale-50 sm:scale-75 lg:scale-100 rounded-xs">
+                        <div class="bg-accent1/10 h-96 shrink-0 w-64  rounded-xs">
                             <img 
                                     class="w-full h-40 object-cover object-top"
                                     src="../../pictures/scary1.jpg" 
@@ -656,7 +660,7 @@
                             </div>
                         </div>
 
-                        <div class="bg-accent1/10 h-96 shrink-0 w-64 scale-50 sm:scale-75 lg:scale-100 rounded-xs">
+                        <div class="bg-accent1/10 h-96 shrink-0 w-64  rounded-xs">
                             <img 
                                     class="w-full h-40 object-cover object-top"
                                     src="../../pictures/scary3.jpg" 
@@ -699,7 +703,7 @@
                             </div>
                         </div>
 
-                        <div class="bg-accent1/10 h-96 shrink-0 w-64 scale-50 sm:scale-75 lg:scale-100 rounded-xs">
+                        <div class="bg-accent1/10 h-96 shrink-0 w-64  rounded-xs">
                             <img 
                                     class="w-full h-40 object-cover object-top"
                                     src="../../pictures/scary1.jpg" 
@@ -742,7 +746,7 @@
                             </div>
                         </div>
 
-                        <div class="bg-accent1/10 h-96 shrink-0 w-64 scale-50 sm:scale-75 lg:scale-100 rounded-xs">
+                        <div class="bg-accent1/10 h-96 shrink-0 w-64  rounded-xs">
                             <img 
                                     class="w-full h-40 object-cover object-top"
                                     src="../../pictures/scary3.jpg" 
@@ -785,7 +789,7 @@
                             </div>
                         </div>
 
-                        <div class="bg-accent1/10 h-96 shrink-0 w-64 scale-50 sm:scale-75 lg:scale-100 rounded-xs">
+                        <div class="bg-accent1/10 h-96 shrink-0 w-64  rounded-xs">
                             <img 
                                     class="w-full h-40 object-cover object-top"
                                     src="../../pictures/scary1.jpg" 
@@ -828,7 +832,7 @@
                             </div>
                         </div>
 
-                        <div class="bg-accent1/10 h-96 shrink-0 w-64 scale-50 sm:scale-75 lg:scale-100 rounded-xs">
+                        <div class="bg-accent1/10 h-96 shrink-0 w-64  rounded-xs">
                             <img 
                                     class="w-full h-40 object-cover object-top"
                                     src="../../pictures/scary3.jpg" 
@@ -877,7 +881,7 @@
 
             </div>
 
-            <a href="/stories" class="scale-[0.6] sm:scale-100 absolute right-0 bottom-36 sm:bottom-12 lg:-bottom-16 bg-accent2 w-32 py-1 text-base text-center font-bold rounded-xs">
+            <a href="/stories" class="scale-75 sm:scale-100 absolute right-0 -bottom-12 sm:-bottom-16 bg-accent2 w-32 py-1 text-base text-center font-bold rounded-xs">
                 See more
                 <svg class="inline" width="30" height="31" viewBox="0 0 30 31" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <g clip-path="url(#clip0_88_86)">
@@ -894,21 +898,23 @@
 
         </div>
 
+        
         <!-- Registration -->
-        <div class="relative w-screen aspect-video -translate-x-24 bg-cover mt-32 bg-[url('../../pictures/writer.jpeg')]
-                    before:w-full before:h-32 before:bg-linear-to-b before:from-background before:from-30% before:absolute before:top-0 before:content-[''] before:pointer-events-none
-                    after:w-full after:h-32 after:bg-linear-to-t after:from-background after:from-30% after:absolute after:bottom-0 after:content-[''] after:pointer-events-none">
+
+        <div class="relative w-screen min-h-64 aspect-video -translate-x-8 md:-translate-x-16 lg:-translate-x-24 bg-cover bg-[url('../../pictures/writer.jpeg')]
+                    before:w-full before:h-4 sm:before:h-12 md:before:h-24 lg:before:h-32  before:bg-linear-to-b before:from-background before:from-30% before:absolute before:top-0 before:content-[''] before:pointer-events-none
+                    after:w-full after:h-4 sm:after:h-12 md:after:h-24 lg:after:h-32 after:bg-linear-to-t after:from-background after:from-30% after:absolute after:bottom-0 after:content-[''] after:pointer-events-none">
             
-            <h3 class="font-inknut text-xl sm:text-2xl md:text-4xl lg:text-6xl absolute top-12 md:top-18 lg:top-24 left-16">
+            <h3 class="font-inknut text-xl sm:text-2xl md:text-4xl lg:text-6xl mt-4 sm:mt-12 md:mt-18 lg:mt-24 ml-8 sm:ml-16">
                 Ingin menulis <br> ceritamu sendiri?
             </h3>
 
-            <p class="font-inknut text-xl sm:text-2xl md:text-4xl lg:text-5xl absolute top-60 md:top-52 lg:top-80 left-16">
+            <p class="font-inknut text-xl sm:text-2xl md:text-4xl lg:text-5xl mt-4 sm:mt-12 md:mt-18 lg:mt-24 ml-8 sm:ml-16">
                 Daftarkan <span class="font-creepster text-accent1">JIWAMU</span> <br>
                 sekarang!!!
             </p>
 
-            <a href="/login" class="bg-accent2 w-32 py-2 text-center font-semibold rounded-md absolute md:top-80 lg:top-[28rem] left-16">
+            <a href="/login" class="bg-accent2 scale-75 block sm:scale-100 w-32 py-2 text-center font-semibold rounded-md mt-4 sm:mt-12 md:mt-18 lg:mt-24 ml-4 sm:ml-16">
                 Buat akun
             </a>
 
@@ -916,7 +922,7 @@
 
     </main>
 
-    <footer class="flex justify-between items-center border-t-2 border-accent1/15 text-accent1 w-screen h-24 px-16">
+    <footer class="flex flex-col sm:flex-row justify-around sm:justify-between items-center border-t-2 border-accent1/15 text-accent1 w-screen h-24 px-4 sm:px-8 md:px-16">
         <p>
             &copy;2024 <span class="font-bold">Ceram</span>, all rights reserved  
         </p>
