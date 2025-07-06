@@ -1,0 +1,89 @@
+@import "tailwindcss";
+@source "../views";
+
+@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
+@source '../../storage/framework/views/*.php';
+@source '../**/*.blade.php';
+@source '../**/*.js';
+
+@theme {
+    --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
+        'Segoe UI Symbol', 'Noto Color Emoji';
+}
+
+@theme {
+  --color-background: #1d1819;
+  --color-accent1: #ef1f1f;
+  --color-accent1dark: #490505;
+  --color-accent2: #208484;
+  --color-white: #efefef;
+  --color-black: #000000;
+  --color-accent2light: #2aadad;
+
+
+  --background-image: url('/pictures/writer.jpeg');
+  --font-creepster: Creepster;
+  --font-inknut: Inknut Antiqua;
+  --font-inter: Inter;
+  --font-nosifer: Nosifer;
+  --font-mochiy: Mochiy Pop One;
+}
+
+/*
+  The default border color has changed to `currentColor` in Tailwind CSS v4,
+  so we've added these compatibility styles to make sure everything still
+  looks the same as it did with Tailwind CSS v3.
+
+  If we ever want to remove these styles, we need to add an explicit border
+  color utility to any element that depends on these defaults.
+*/
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentColor);
+  }
+}
+
+@utility scrollbar-hidden {
+  /* Chrome, Safari and Opera */
+  &::-webkit-scrollbar {
+    display: none;
+  }
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+}
+
+@utility custom-scrollbar {
+  /* Style scrollbar untuk WebKit-based browsers */
+  &::-webkit-scrollbar {
+    width: 8px; /* Lebar scrollbar */
+    height: 8px; /* Tinggi scrollbar (untuk horizontal) */
+  }
+
+  /* Track (area di belakang thumb) */
+  &::-webkit-scrollbar-track {
+    background: #f3f3f3; /* Warna track */
+    border-radius: 10px; /* Membuat sudut membulat */
+  }
+
+  /* Thumb (bagian yang bisa digeser) */
+  &::-webkit-scrollbar-thumb {
+    background: #b0b0b0; /* Warna thumb */
+    border-radius: 10px; /* Membuat thumb membulat */
+  }
+
+  /* Hover effect pada thumb */
+  &::-webkit-scrollbar-thumb:hover {
+    background: #909090; /* Warna thumb saat dihover */
+  }
+
+  /* Scrollbar Firefox */
+  * {
+    scrollbar-width: thin; /* Membuat scrollbar lebih kecil */
+    scrollbar-color: #b0b0b0 #f3f3f3; /* Thumb dan Track */
+  }
+
+}
