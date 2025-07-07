@@ -49,4 +49,10 @@ class Post extends Model
     {
         return $this->belongsToMany(User::class, 'saved_posts', "post_id", "user_id");
     }
+
+    public function ratedByUsers() : BelongsToMany
+    {
+        return $this->belongsToMany(User::class, 'post_ratings', 'post_id', 'user_id')
+                    ->withPivot('rating');
+    }
 }
