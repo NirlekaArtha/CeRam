@@ -24,8 +24,6 @@ class PostFactory extends Factory
             'content' => fake()->paragraph(100),
             'image' => "scary1.jpg",
             'user_id' => User::factory(),
-            'rating' => fake()->randomFloat(2, 1, 5),
-            'votes' => fake()->numberBetween(0, 1000),
             'slug' => Str::slug($title),
             'category' => fake()->word(),
         ];

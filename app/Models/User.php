@@ -58,4 +58,10 @@ class User extends Authenticatable
     {
         return $this->belongsToMany(Post::class, "saved_posts", "user_id", "post_id");
     }
+
+    public function ratedPosts() : BelongsToMany
+    {
+        return $this->BelongsToMany(Post::class, 'post_ratings', 'user_id', 'post_id')
+                    ->withPivot('rating');
+    }
 }

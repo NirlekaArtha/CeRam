@@ -5,6 +5,7 @@ namespace Database\Seeders;
 use App\Models\User;
 use App\Models\Category;
 use App\Models\Post;
+use App\Models\PostRating;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -35,6 +36,17 @@ class DatabaseSeeder extends Seeder
             $user->savedPosts()->attach(
                 $posts->random(rand(3, 10))->pluck('id')->toArray()
             );
+        });
+
+        // Setiap post di-rating oleh 5-10 user secara acak
+        $posts->each(function ($post) use ($users) {
+            $users->random(rand(3, 10))->each(function ($user) use ($post) {
+                PostRating::create([
+                    'post_id' => $post->id,
+                    'user_id' => $user->id,
+                    'rating' => rand(1, 5),
+                ]);
+            });
         });
     }
 }
