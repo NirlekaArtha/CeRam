@@ -25,7 +25,6 @@ class PostFactory extends Factory
             'image' => "scary1.jpg",
             'user_id' => User::factory(),
             'slug' => Str::slug($title),
-            'category' => fake()->word(),
         ];
     }
 }

@@ -19,8 +19,7 @@ return new class extends Migration
             $table->string('image')->default('scary1.jpg');
             $table->decimal('rating', 3, 2)->default(0.00);
             $table->unsignedInteger('votes')->default(0);
-            $table->string('slug')->unique()->nullable();
-            $table->string('category')->nullable();
+            $table->string('slug')->unique();
             $table->timestamps();
         });
 
