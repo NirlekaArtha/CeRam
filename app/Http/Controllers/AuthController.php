@@ -34,12 +34,16 @@ class AuthController extends Controller
     public function login(Request $request)
     {
         $credentials = $request->validate([
-            'email' => 'required|email',
+            'usernameOrEmail' => 'required|string',
             'password' => 'required|string',
         ]);
 
-        if (Auth::attempt($credentials)) {
+        $login = $credentials['usernameOrEmail'];
+        $fieldType = filter_var($login, FILTER_VALIDATE_EMAIL) ? 'email' : 'username';
+
+        if (Auth::attempt([$fieldType => $login, 'password' => $credentials['password']])) {
             // Authentication passed...
+            $request->session()->regenerate();
             return redirect()->intended('/')->with('success', 'You are now logged in!');
         }
 
