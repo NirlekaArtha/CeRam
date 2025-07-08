@@ -18,8 +18,20 @@
   </h3>
   
   <form class="text-white flex flex-col items-center justify-start gap-6 w-[360px] rounded-md h-fit bg-black/85 py-6 px-12"
-        action="/register" method="POST">
-    
+        action="{{ route('signUp') }}" method="POST">
+  
+    @csrf
+
+    @if ($errors->any())
+        <div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded mb-4">
+            <ul>
+                @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        </div>
+    @endif
+
     <h2 class="text-4xl font-bold mb-8">
       Sign up
     </h2>
@@ -27,13 +39,13 @@
     <input type="text" name="username" id="username" placeholder="Username" required
            class="focus:outline-none border-[1.5px] border-white/75 rounded-sm w-full p-2">
     
-    <input type="email" name="Email" id="Email" placeholder="Email" required
+    <input type="email" name="email" id="Email" placeholder="email" required
            class="focus:outline-none border-[1.5px] border-white/75 rounded-sm w-full p-2">
 
     <p id="new-password-message" class="text-sm text-accent1 hidden"></p>
       
     <div class="relative flex items-center">
-      <input type="password" name="password-baru" id="new-password" placeholder="password-baru"
+      <input type="password" name="password" id="new-password" placeholder="password"
           class="password-input focus:outline-none border-[1.5px] border-white/75 rounded-sm w-full p-2">
       <button type="button" class="absolute cursor-pointer top-2.5 right-4 see-password-button">
         <svg  xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
@@ -43,7 +55,7 @@
     <p id="confirm-password-message" class="text-sm text-accent1 hidden"></p>
 
     <div class="relative flex items-center">
-      <input type="password" name="confirm-password" id="confirm-password" placeholder="confirm-password"
+      <input type="password" name="password_confirmation" id="confirm-password" placeholder="password confirmation"
           class="password-input focus:outline-none border-[1.5px] border-white/75 rounded-sm w-full p-2">
       <button type="button" class="absolute cursor-pointer top-2.5 right-4 see-password-button">
         <svg  xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>

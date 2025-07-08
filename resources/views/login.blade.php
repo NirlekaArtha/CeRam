@@ -16,13 +16,33 @@
     CERAM
   </h3>
   
-  <form class="text-white flex flex-col items-center justify-start gap-6 w-[360px] rounded-md h-[480px] bg-black/85 py-6 px-12">
+  <form class="text-white flex flex-col items-center justify-start gap-6 w-[360px] rounded-md h-[480px] bg-black/85 py-6 px-12"
+        action="{{ route('login') }}" method="POST">
+    
+    @csrf
     
     <h2 class="text-4xl font-bold mb-8">
       Login
     </h2>
 
-    <input type="text" name="username" id="username" placeholder="Username" required
+    @if (session('success'))
+        <div class="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded mb-4">
+            {{ session('success') }}
+        </div>
+    @endif
+
+    @if ($errors->any())
+        <div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded mb-4">
+            <ul>
+                @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        </div>
+    @endif
+
+
+    <input type="text" name="usernameOrEmail" id="username" placeholder="Username or Email" required
            class="focus:outline-none border-[1.5px] border-white/75 rounded-sm w-full p-2">
 
     <input type="password" name="password" id="password" placeholder="Password" required

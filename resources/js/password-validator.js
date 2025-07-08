@@ -5,7 +5,7 @@ const confirmPasswordMessage = document.querySelector("#confirm-password-message
 const newPasswordInput = document.querySelector("#new-password");
 const confirmPasswordInput = document.querySelector("#confirm-password");
 
-const flags = "gm";
+const flags = "m";
 const pattern = "^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[!@#$%^&*()_+\\-={}\\[\\]|:;\"'<>,.?/])(?!.*\\s).{8,24}$"; // 8-24 characters, at least one uppercase letter, one lowercase letter, one number, and one special character
 const regex = new RegExp(pattern, flags);
 
