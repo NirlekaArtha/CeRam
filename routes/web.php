@@ -4,6 +4,16 @@ use Illuminate\Support\Facades\Route;
 use App\Models\Post;
 use Illuminate\Support\Carbon;
 
+use App\Http\Controllers\AuthController;
+
+Route::get('/login', [AuthController::class, 'showLogin'])->name('login.show');
+Route::post('/login', [AuthController::class, 'login']);
+Route::get('/sign-up', [AuthController::class, 'showSignUp'])->name('sign-up.show');
+Route::post('/sign-up', [AuthController::class, 'signUp']);
+Route::get('/recovery', [AuthController::class, 'showRecovery'])->name('recovery.show');
+Route::post('/recovery', [AuthController::class, 'recovery']);
+
+
 Route::get('/', function () {
     return view('index');
 });
@@ -23,17 +33,17 @@ Route::get('/post/{slug}', function ($slug) {
     return view('post', ["post" => $post]);
 });
 
-Route::get('/login', function () {
-    return view('login');
-});
+// Route::get('/login', function () {
+//     return view('login');
+// });
 
-Route::get('/sign-up', function () {
-    return view('sign-up');
-});
+// Route::get('/sign-up', function () {
+//     return view('sign-up');
+// });
 
-Route::get('/recovery', function () {
-    return view('recovery');
-});
+// Route::get('/recovery', function () {
+//     return view('recovery');
+// });
 
 Route::get('/settings', function () {
     return redirect("/settings/account");
