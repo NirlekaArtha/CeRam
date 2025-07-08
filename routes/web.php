@@ -7,11 +7,12 @@ use Illuminate\Support\Carbon;
 use App\Http\Controllers\AuthController;
 
 Route::get('/login', [AuthController::class, 'showLogin'])->name('login.show');
-Route::post('/login', [AuthController::class, 'login']);
+Route::post('/login', [AuthController::class, 'login'])->name('login');
+Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 Route::get('/sign-up', [AuthController::class, 'showSignUp'])->name('sign-up.show');
-Route::post('/sign-up', [AuthController::class, 'signUp']);
+Route::post('/sign-up', [AuthController::class, 'signUp'])->name('signUp');
 Route::get('/recovery', [AuthController::class, 'showRecovery'])->name('recovery.show');
-Route::post('/recovery', [AuthController::class, 'recovery']);
+Route::post('/recovery', [AuthController::class, 'recovery'])->name('recovery');
 
 
 Route::get('/', function () {
