@@ -19,7 +19,7 @@
       {{ $post->title }}
     </h2>
     <h3 class="text-2xl text-white font-mochiy text-center">
-      By {{ $post->author }}
+      By {{ $post->author->username }}
     </h3>
     <p class="text-white text-sm font-inknut-antiqua text-center mt-2"> 
       | {{ ($post->created_at)->format('D, d M Y') }} |
@@ -28,7 +28,7 @@
     <div class="relative w-screen mt-24 mb-24 
                 before:w-full before:h-4 sm:before:h-12 md:before:h-24 lg:before:h-32  before:bg-linear-to-b before:from-background before:from-30% before:absolute before:top-0 before:content-[''] before:pointer-events-none
                 after:w-full after:h-4 sm:after:h-12 md:after:h-24 lg:after:h-32  after:bg-linear-to-t after:from-background after:from-30% after:absolute after:bottom-0 after:content-[''] after:pointer-events-none">
-      <img src="/pictures/{{ $post->image }}" alt="Story's picture" class="w-full aspect-video object-cover">
+      <img src="/storage/{{ $post->image }}" alt="Story's picture" class="w-full aspect-video object-cover">
     </div>
   </header>
 

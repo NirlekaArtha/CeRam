@@ -20,7 +20,6 @@ class Post extends Model
         'rating',
         'votes',
         'slug',
-        'category',
     ];
 
     protected function casts(): array
@@ -35,7 +34,7 @@ class Post extends Model
         'updated_at',
     ];
 
-    public function user() : BelongsTo
+    public function author() : BelongsTo
     {
         return $this->belongsTo(User::class, 'user_id');
     }

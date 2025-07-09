@@ -5,6 +5,7 @@ use App\Models\Post;
 use Illuminate\Support\Carbon;
 
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\PostController;
 
 Route::get('/login', [AuthController::class, 'showLogin'])->name('login.show');
 Route::post('/login', [AuthController::class, 'login'])->name('login');
@@ -19,23 +20,11 @@ Route::get('/', function () {
     return view('index');
 });
 
-Route::get('/posts', function () {
-    return view('posts');
-});
-
-Route::get('/post/{slug}', function ($slug) {
-
-    $post = Post::where('slug', $slug)->firstOrFail();
-    
-    return view('post', ["post" => $post]);
-});
-
-
 Route::middleware('auth')->group(function () {
     
-    Route::get('/post-form', function () {
-    return view('post-form');
-    });
+    Route::get('posts/{post:slug}/edit', [PostController::class, 'edit'])->name('posts.edit');
+    Route::delete('posts/{post:slug}', [PostController::class, 'destroy'])->name('posts.destroy');
+    Route::resource('posts', PostController::class)->except(['index', 'show', 'edit', 'destroy']);
 
     Route::get('/settings', function () {
     return redirect("/settings/account");
@@ -58,3 +47,7 @@ Route::middleware('auth')->group(function () {
     });
 
 });
+
+Route::get('/posts', [PostController::class, 'index'])->name('posts.index');
+
+Route::get('/posts/{post:slug}', [PostController::class, 'show'])->name('posts.show');
