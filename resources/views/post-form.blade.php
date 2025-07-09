@@ -20,16 +20,30 @@
         </h2>
     </header>
 
+    @if($errors->any())
+        <div class="bg-red-500 text-white p-4 rounded-md mb-8 mx-8 md:mx-16 lg:mx-24">
+            <ul>
+                @foreach($errors->all() as $message)
+                    <li>{{ $message }}</li>
+                @endforeach
+            </ul>
+        </div>
+    @endif
+
     <main class="relative w-full px-8 md:px-16 lg:px-24 overflow-x-hidden">
-        <form action="">
+        <form action="{{ $action }}" method="POST" enctype="multipart/form-data">
+            @csrf
+            @if(!request()->is('posts/create'))
+                @method('PUT')
+            @endif
             <div class="flex flex-col gap-4 mb-8">
                 <label for="title" class="text-xl font-semibold">Judul Cerita</label>
-                <input type="text" id="title" name="title" class="w-full h-12 px-4 bg-white rounded-md text-accent1dark placeholder:text-accent1dark/50 focus:outline-none focus:ring-2" placeholder="Masukkan judul cerita" required>
+                <input value="{{ old('title', $post->title) }}" type="text" id="title" name="title" class="w-full h-12 px-4 bg-white rounded-md text-accent1dark placeholder:text-accent1dark/50 focus:outline-none focus:ring-2" placeholder="Masukkan judul cerita" required>
             </div>
 
             <div class="flex flex-col gap-4 mb-8">
                 <label for="content" class="text-xl font-semibold">Isi Cerita</label>
-                <textarea id="content" name="content" rows="10" class="w-full p-4 bg-white rounded-md text-accent1dark placeholder:text-accent1dark/50 focus:outline-none focus:ring-2" placeholder="Masukkan isi cerita" required></textarea>
+                <textarea id="content" name="content" rows="10" class="w-full p-4 bg-white rounded-md text-accent1dark placeholder:text-accent1dark/50 focus:outline-none focus:ring-2" placeholder="Masukkan isi cerita" required>{{ old('content', $post->content) }}</textarea>
             </div>
 
             <div class="flex flex-col gap-2">
@@ -53,72 +67,32 @@
                   </svg>
               
                   <span class="font-medium">Upload Gambar</span>
-                  <input id="image-input" type="file" accept="image/*" class="opacity-0 absolute" required/>
+                  <input id="image-input" name="image" type="file" accept=".png,.jpg,.jpeg,.webp" class="opacity-0 absolute" {{ request()->is('posts/create') ? 'required' : '' }}/>
                 </label>
               
                 <!-- Nama file -->
                 <div id="file-name" class="text-sm text-[--color-accent2]"></div>
               
                 <!-- Preview gambar -->
-                <div id="image-preview" class="mt-2">
+                <div class="mt-2">
                   <!-- Gambar akan muncul di sini -->
+                  <img id="preview-image" alt="Preview Gambar" src="/storage/{{ $post->image }}" class="mt-1 w-full rounded-lg border border-[--color-accent2] {{ request()->is('posts/create') ? 'hidden' : '' }}" />
                 </div>
             </div>
 
             <div class="text-white mt-8 p-4 rounded-lg w-fit">
-                <label class="block font-semibold text-lg mb-2">Genre</label>
-                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-x-16 gap-y-2">
-                  <label class="flex items-center gap-2">
-                    <input type="checkbox" name="genre" value="Accident" class="accent-[--color-accent2]" />
-                    <span>Accident</span>
-                  </label>
-                  <label class="flex items-center gap-2">
-                    <input type="checkbox" name="genre" value="Mystery" class="accent-[--color-accent2]" />
-                    <span>Mystery</span>
-                  </label>
-                  <label class="flex items-center gap-2">
-                    <input type="checkbox" name="genre" value="Science fiction" class="accent-[--color-accent2]" />
-                    <span>Science fiction</span>
-                  </label>
-              
-                  <label class="flex items-center gap-2">
-                    <input type="checkbox" name="genre" value="Monsters" class="accent-[--color-accent2]" />
-                    <span>Monsters</span>
-                  </label>
-                  <label class="flex items-center gap-2">
-                    <input type="checkbox" name="genre" value="Urban Legend" class="accent-[--color-accent2]" />
-                    <span>Urban Legend</span>
-                  </label>
-                  <label class="flex items-center gap-2">
-                    <input type="checkbox" name="genre" value="Psychology" class="accent-[--color-accent2]" />
-                    <span>Psychology</span>
-                  </label>
-              
-                  <label class="flex items-center gap-2">
-                    <input type="checkbox" name="genre" value="Crime" class="accent-[--color-accent2]" />
-                    <span>Crime</span>
-                  </label>
-                  <label class="flex items-center gap-2">
-                    <input type="checkbox" name="genre" value="Supernatural" class="accent-[--color-accent2]" />
-                    <span>Supernatural</span>
-                  </label>
-                  <label class="flex items-center gap-2">
-                    <input type="checkbox" name="genre" value="Dark Comedy" class="accent-[--color-accent2]" />
-                    <span>Dark Comedy</span>
-                  </label>
-              
-                  <label class="flex items-center gap-2">
-                    <input type="checkbox" name="genre" value="Other dimension" class="accent-[--color-accent2]" />
-                    <span>Other dimension</span>
-                  </label>
-                  <label class="flex items-center gap-2">
-                    <input type="checkbox" name="genre" value="Gore" class="accent-[--color-accent2]" />
-                    <span>Gore</span>
-                  </label>
-                  <label class="flex items-center gap-2">
-                    <input type="checkbox" name="genre" value="Apocalyptic" class="accent-[--color-accent2]" />
-                    <span>Apocalyptic</span>
-                  </label>
+                <label class="block font-semibold text-lg mb-2">Categories <span class="text-sm text-accent1/80">*(min: 1, max 3)</span> </label>
+                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-x-16 gap-y-2">
+
+                  @foreach ($allCategories as $category)
+                  
+                    <label class="flex items-center gap-2">
+                      <input type="checkbox" name="categories[]" value="{{ $category }}" class="accent-[--color-accent2]" 
+                            {{ in_array($category, old('categories', $post->categories->pluck('name')->toArray())) ? 'checked' : '' }}/>
+                      <span>{{ $category }}</span>
+                    </label>
+
+                  @endforeach
                 </div>
             </div>
               
