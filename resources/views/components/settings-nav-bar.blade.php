@@ -10,8 +10,8 @@
 
 <ul class="flex flex-col gap-8">
     <li>  
-    <a class="flex gap-4 {{ request()->is('settings/account') ?  'text-accent2light' : '' }}" 
-    href="/settings/account">
+    <a class="flex gap-4 {{ url()->current() === route('settings.profile') ?  'text-accent2light' : '' }}" 
+    href="{{ route('settings.profile') }}">
         <svg xmlns="http://www.w3.org/2000/svg" 
             width="24" height="24" viewBox="0 0 24 24" 
             fill="none" stroke="currentColor" stroke-width="2" 
@@ -24,8 +24,8 @@
     </a>
     </li>
     <li>
-    <a class="flex gap-4 {{ request()->is('settings/security') ?  'text-accent2light' : '' }}" 
-    href="/settings/security">
+    <a class="flex gap-4 {{ url()->current() === route('settings.security') ?  'text-accent2light' : '' }}" 
+    href="{{ route('settings.security') }}">
         <svg xmlns="http://www.w3.org/2000/svg" 
             width="24" height="24" viewBox="0 0 24 24" 
             fill="none" stroke="currentColor" stroke-width="2" 
@@ -37,8 +37,8 @@
     </a>
     </li>
     <li>
-    <a  class="flex gap-4 {{ request()->is('settings/saved') ?  'text-accent2light' : '' }}" 
-        href="/settings/saved">
+    <a  class="flex gap-4 {{ url()->current() === route('settings.saved-stories') ?  'text-accent2light' : '' }}" 
+        href="{{ route('settings.saved-stories') }}">
         <svg xmlns="http://www.w3.org/2000/svg" 
             width="24" height="24" viewBox="0 0 24 24" 
             fill="none" stroke="currentColor" stroke-width="2" 
@@ -49,8 +49,8 @@
     </a>
     </li>
     <li>
-    <a  class="flex gap-4 {{ request()->is('settings/your-stories') ?  'text-accent2light' : '' }}" 
-        href="/settings/your-stories">
+    <a  class="flex gap-4 {{ url()->current() === route('settings.your-stories') ?  'text-accent2light' : '' }}" 
+        href="{{ route('settings.your-stories') }}">
         <svg xmlns="http://www.w3.org/2000/svg" 
             width="24" height="24" viewBox="0 0 24 24" 
             fill="none" stroke="currentColor" stroke-width="2" 
