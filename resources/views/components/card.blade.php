@@ -1,19 +1,19 @@
-<div class="bg-accent1/10 h-96 shrink-0 w-64 shadow-[2px_2px_4px_0px_black] rounded-xs">
+<div class="bg-accent1/10 h-96 shrink-0 w-64 shadow-[2px_2px_4px_0px_black] flex flex-col rounded-xs">
     <img 
             class="w-full h-40 object-cover object-top"
-            src="/pictures/{{ $image }}" 
+            src="/storage/{{ $image }}" 
             alt="scary">
     
-    <div class="pt-3 px-4">
-        <h4 class="text-xl font-medium">
+    <div class="pt-3 px-4 flex flex-col gap-4 flex-1">
+        <h4 class="text-xl font-medium line-clamp-2 ">
             {{ $title }}
         </h4>
 
-        <p class="font-light text-xs text-white/65 mt-4 h-20">
+        <p class="font-light text-xs text-white/65 h-14">
             {{ $desc }}
         </p>
 
-        <div class="mt-4">
+        <div class="mt-auto mb-8">
             <div class="flex mb-2">
                 <svg    xmlns="http://www.w3.org/2000/svg"
                         width="14" 
@@ -32,7 +32,7 @@
                 <p class="font-light text-xs">
                     {{ $date }}
                 </p>
-                <a class="text-accent2 text-xs hover:underline hover:font-semibold" href="{{ '/post' }}">
+                <a class="text-accent2 text-xs hover:underline hover:font-semibold" href="{{ $link }}">
                     Read more &raquo;
                 </a>
             </div>
