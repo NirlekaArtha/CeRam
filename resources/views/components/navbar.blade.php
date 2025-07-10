@@ -32,7 +32,7 @@
             @endauth
             @guest
                 <li class="text-xl">
-                    <a href="/settings/account" class="mx-2 my-1 {{ request()->is('login') ? 'text-accent2 font-inknut underline' : 'hover:text-white border-b-2 border-transparent hover:border-white transition-all duration-300 origin-left' }}  cursor-pointer ">Login</a>
+                    <a href="{{ route('login') }}" class="mx-2 my-1 {{ request()->is('login') ? 'text-accent2 font-inknut underline' : 'hover:text-white border-b-2 border-transparent hover:border-white transition-all duration-300 origin-left' }}  cursor-pointer ">Login</a>
                 </li>
             @endguest
         </ul>
