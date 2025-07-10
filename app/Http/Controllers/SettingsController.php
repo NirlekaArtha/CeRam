@@ -21,13 +21,14 @@ class SettingsController extends Controller
 
     public function savedStories ()
     {
-        $savedStories = Auth::user()->savedPosts();
+        $savedStories = Auth::user()->savedPosts;
+
         return view('settings.saved', ['savedStories' => $savedStories]);
     }
 
     public function yourStories ()
     {
-        $yourStories = Auth::user()->posts();
+        $yourStories = Auth::user()->posts;
         return view('settings.saved', ['yourStories' => $yourStories]);
     }
 }
