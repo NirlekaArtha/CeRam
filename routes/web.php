@@ -7,6 +7,7 @@ use Illuminate\Support\Carbon;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\IndexController;
+use App\Http\Controllers\SettingsController;
 
 Route::get('/login', [AuthController::class, 'showLogin'])->name('login.show');
 Route::post('/login', [AuthController::class, 'login'])->name('login');
@@ -25,25 +26,16 @@ Route::middleware('auth')->group(function () {
     Route::delete('posts/{post:slug}', [PostController::class, 'destroy'])->name('posts.destroy');
     Route::resource('posts', PostController::class)->except(['index', 'show', 'edit', 'destroy']);
 
-    Route::get('/settings', function () {
-    return redirect("/settings/account");
-    });
+    Route::get('/settings', function () {return redirect()->route('settings.profile');});
 
-    Route::get('/settings/account', function () {
-        return view('settings.account');
-    });
-
-    Route::get('/settings/saved', function () {
-        return view('settings.saved');
-    });
-
-    Route::get('/settings/security', function () {
-        return view('settings.security');
-    });
-
-    Route::get('/settings/your-stories', function () {
-        return view('settings.your-stories');
-    });
+    Route::get('/settings/profile', [SettingsController::class, 'profile'])->name('settings.profile');
+    Route::get('/settings/security', [SettingsController::class, 'security'])->name('settings.security');
+    Route::get('/settings/saved-stories', [SettingsController::class, 'savedStories'])->name('settings.saved-stories');
+    Route::get('/settings/your-stories', [SettingsController::class, 'yourStories'])->name('settings.your-stories');
+    
+    Route::post('/settings/profile', [AuthController::class, 'updateProfile'])->name('settings.update-profile');
+    Route::post('/settings/security', [AuthController::class, 'updateSecurity'])->name('settings.update-security');
+    
 
 });
 
