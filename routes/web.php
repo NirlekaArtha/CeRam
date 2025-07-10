@@ -6,6 +6,7 @@ use Illuminate\Support\Carbon;
 
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\PostController;
+use App\Http\Controllers\IndexController;
 
 Route::get('/login', [AuthController::class, 'showLogin'])->name('login.show');
 Route::post('/login', [AuthController::class, 'login'])->name('login');
@@ -16,9 +17,7 @@ Route::get('/recovery', [AuthController::class, 'showRecovery'])->name('recovery
 Route::post('/recovery', [AuthController::class, 'recovery'])->name('recovery');
 
 
-Route::get('/', function () {
-    return view('index');
-});
+Route::get('/', [IndexController::class, 'index'])->name('home');
 
 Route::middleware('auth')->group(function () {
     
