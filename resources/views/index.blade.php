@@ -29,7 +29,7 @@
                 bulu kudukmu MERINDING!!!
             </p>
 
-            <a href="/posts" class="mt-12 block bg-accent2 w-40 py-3 text-center font-semibold rounded-xs">
+            <a href="{{ route('posts.index') }}" class="mt-12 block bg-accent2 w-40 py-3 text-center font-semibold rounded-xs">
                 Baca Sekarang
             </a>
         </div>
@@ -53,14 +53,11 @@
             <div class="relative flex bg-accent1/10 h-60 translate-y-32 sm:translate-y-0">
                 <div class="flex-1 p-6">
                     <h4 class="font-medium text-2xl mb-4">
-                        Wanita penunggu 
+                        {{ $popularPost->title }}
                     </h4>
         
                     <p class="font-light text-sm txt-white/65 mb-7 w-4/5 h-16 overflow-hidden">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-                        Id ad sit odit sequi quidem, impedit nostrum dolore vel 
-                        ullam fugiat eaque exercitationem optio aut magnam obcaecati, 
-                        dicta debitis doloribus quos expedita sapiente?
+                        {{ Str::limit($popularPost->content, 100) }}
                     </p>
         
                     <div class="flex mb-2">
@@ -73,27 +70,27 @@
                             <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
                         </svg>
                         <p class="text-sm text-center font-medium">
-                            4.9 | 409 Votes
+                            {{ $popularPost->rating }} | {{ $popularPost->votes }} votes
                         </p>
                     </div>
                     
                     <div class="flex justify-between">
                         <p class="font-light text-xs">
-                            May, 20th 2023
+                            {{ $popularPost->created_at->format('d M Y') }}
                         </p>
-                        <a class="text-accent2 hover:underline hover:font-semibold" href="#">
+                        <a class="text-accent2 hover:underline hover:font-semibold" href="{{ route('posts.show', ['post' => $popularPost->slug]) }}">
                             Read more &raquo;
                         </a>
                     </div>
         
                 </div>
 
-                <img src="pictures/scary5.jpg" 
+                <img src="storage/{{ $popularPost->image }}" 
                     alt="scary pict"
                     class="sm:h-full sm:w-52 md:w-80 xl:w-[400px] object-cover sm:static sm:-translate-y-0 absolute top-0 left-0 h-1/2 w-full -translate-y-full">
             </div>
 
-            <a href="/posts" class="scale-75 sm:scale-100 absolute right-0 -bottom-44 sm:-bottom-16  bg-accent2 w-32 py-1 text-base text-center font-bold rounded-xs">
+            <a href="{{ route('posts.index') }}" class="scale-75 sm:scale-100 absolute right-0 -bottom-44 sm:-bottom-16  bg-accent2 w-32 py-1 text-base text-center font-bold rounded-xs">
                 See more
                 <svg class="inline" width="30" height="31" viewBox="0 0 30 31" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <g clip-path="url(#clip0_88_86)">
@@ -125,42 +122,19 @@
 
                     <div class="flex w-max gap-8">
                         
-                        @for ($index = 0; $index < 5; $index++)
-                            
-                        <x-card title="Sweet Lady" 
-                                desc="lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque alias. Lorem ipsum dolor sit amet."
-                                image="scary5.jpg"
-                                rating="4.9"
-                                votes="409"
-                                date="May, 20th 2023"
-                                link="https://www.laravel.com"/>
-                                
+                        @foreach ($recomendationPosts as $post)
 
-                        <x-card title="The Butcher" 
-                                desc="lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque alias. Lorem ipsum dolor sit amet."
-                                image="scary4.jpg"
-                                rating="4.9"
-                                votes="409"
-                                date="May, 20th 2023"
-                                link="https://www.laravel.com"/>
+                            <x-card 
+                                image="{{ $post->image }}" 
+                                title="{{ $post->title }}" 
+                                desc="{{ Str::limit($post->content, 100) }}" 
+                                rating="{{ $post->rating }}" 
+                                votes="{{ $post->votes }}" 
+                                date="{{ $post->created_at->format('d M Y') }}" 
+                                link="{{ route('posts.show', ['post' => $post->slug]) }}"
+                            />
 
-                        <x-card title="Foggy Cabin" 
-                                desc="lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque alias. Lorem ipsum dolor sit amet."
-                                image="scary1.jpg"
-                                rating="4.9"
-                                votes="409"
-                                date="May, 20th 2023"
-                                link="https://www.laravel.com"/>
-
-                        <x-card title="The Rising" 
-                                desc="lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque alias. Lorem ipsum dolor sit amet."
-                                image="scary3.jpg"
-                                rating="4.9"
-                                votes="409"
-                                date="May, 20th 2023"
-                                link="https://www.laravel.com"/>
-
-                        @endfor
+                        @endforeach
 
                     </div>
                     
@@ -168,7 +142,7 @@
 
             </div>
 
-            <a href="/posts" class="scale-75 sm:scale-100 absolute right-0 -bottom-12 sm:-bottom-16 bg-accent2 w-32 py-1 text-base text-center font-bold rounded-xs">
+            <a href="{{ route('posts.index') }}" class="scale-75 sm:scale-100 absolute right-0 -bottom-12 sm:-bottom-16 bg-accent2 w-32 py-1 text-base text-center font-bold rounded-xs">
                 See more
                 <svg class="inline" width="30" height="31" viewBox="0 0 30 31" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <g clip-path="url(#clip0_88_86)">
@@ -201,41 +175,19 @@
 
                     <div class="flex w-max gap-8">
                         
-                        @for ($index = 0; $index < 5; $index++)
-                            
-                        <x-card title="Sweet Lady" 
-                                desc="lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque alias. Lorem ipsum dolor sit amet."
-                                image="scary5.jpg"
-                                rating="4.9"
-                                votes="409"
-                                date="May, 20th 2023"
-                                link="https://www.laravel.com"/>
+                        @foreach ($latestPosts as $post)
 
-                        <x-card title="The Butcher" 
-                                desc="lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque alias. Lorem ipsum dolor sit amet."
-                                image="scary4.jpg"
-                                rating="4.9"
-                                votes="409"
-                                date="May, 20th 2023"
-                                link="https://www.laravel.com"/>
+                            <x-card 
+                                image="{{ $post->image }}" 
+                                title="{{ $post->title }}" 
+                                desc="{{ Str::limit($post->content, 100) }}" 
+                                rating="{{ $post->rating }}" 
+                                votes="{{ $post->votes }}" 
+                                date="{{ $post->created_at->format('d M Y') }}" 
+                                link="{{ route('posts.show', ['post' => $post->slug]) }}"
+                            />
 
-                        <x-card title="Foggy Cabin" 
-                                desc="lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque alias. Lorem ipsum dolor sit amet."
-                                image="scary1.jpg"
-                                rating="4.9"
-                                votes="409"
-                                date="May, 20th 2023"
-                                link="https://www.laravel.com"/>
-
-                        <x-card title="The Rising" 
-                                desc="lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque alias. Lorem ipsum dolor sit amet."
-                                image="scary3.jpg"
-                                rating="4.9"
-                                votes="409"
-                                date="May, 20th 2023"
-                                link="https://www.laravel.com"/>
-
-                        @endfor
+                        @endforeach
 
                     </div>
                     
@@ -243,7 +195,7 @@
 
             </div>
 
-            <a href="/posts" class="scale-75 sm:scale-100 absolute right-0 -bottom-12 sm:-bottom-16 bg-accent2 w-32 py-1 text-base text-center font-bold rounded-xs">
+            <a href="{{ route('posts.index') }}" class="scale-75 sm:scale-100 absolute right-0 -bottom-12 sm:-bottom-16 bg-accent2 w-32 py-1 text-base text-center font-bold rounded-xs">
                 See more
                 <svg class="inline" width="30" height="31" viewBox="0 0 30 31" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <g clip-path="url(#clip0_88_86)">
@@ -276,7 +228,7 @@
                 sekarang!!!
             </p>
 
-            <a href="/login" class="bg-accent2 scale-75 block sm:scale-100 w-32 py-2 text-center font-semibold rounded-md mt-4 sm:mt-12 md:mt-18 lg:mt-24 ml-4 sm:ml-16">
+            <a href="{{ route('signUp') }}" class="bg-accent2 scale-75 block sm:scale-100 w-32 py-2 text-center font-semibold rounded-md mt-4 sm:mt-12 md:mt-18 lg:mt-24 ml-4 sm:ml-16">
                 Buat akun
             </a>
 
