@@ -37,52 +37,19 @@
 
     <main class="relative w-screen px-8 md:px-16 lg:px-24 mt-32">
         <div class="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 w-full place-items-center mb-8">
-            @for ($index = 1; $index <= 8; $index++)
-                {{-- Uncomment the following line to use the dynamic card component with data from the $post variable --}}
-                {{-- Assuming $posts is an array of post objects passed to the view --}}
-                {{-- @php $post = $posts[$index]; @endphp --}}
-                {{-- <x-card 
+            @foreach ($posts as $post)
+
+                <x-card 
                     image="{{ $post->image }}" 
                     title="{{ $post->title }}" 
-                    desc="{{ $post->description }}" 
+                    desc="{{ Str::limit($post->content, 100) }}" 
                     rating="{{ $post->rating }}" 
                     votes="{{ $post->votes }}" 
                     date="{{ $post->created_at->format('d M Y') }}" 
-                    link="{{ route('posts.show', ['id' => $post->id]) }}"
-                /> --}}
+                    link="{{ route('posts.show', ['post' => $post->slug]) }}"
+                />
 
-                <x-card title="Sweet Lady" 
-                        desc="lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque alias. Lorem ipsum dolor sit amet."
-                        image="scary5.jpg"
-                        rating="4.9"
-                        votes="409"
-                        date="May, 20th 2023"
-                        link="https://www.laravel.com"/>
-
-                <x-card title="The Butcher" 
-                        desc="lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque alias. Lorem ipsum dolor sit amet."
-                        image="scary4.jpg"
-                        rating="4.9"
-                        votes="409"
-                        date="May, 20th 2023"
-                        link="https://www.laravel.com"/>
-
-                <x-card title="Foggy Cabin" 
-                        desc="lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque alias. Lorem ipsum dolor sit amet."
-                        image="scary1.jpg"
-                        rating="4.9"
-                        votes="409"
-                        date="May, 20th 2023"
-                        link="https://www.laravel.com"/>
-
-                <x-card title="The Rising" 
-                        desc="lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque alias. Lorem ipsum dolor sit amet."
-                        image="scary3.jpg"
-                        rating="4.9"
-                        votes="409"
-                        date="May, 20th 2023"
-                        link="https://www.laravel.com"/>
-            @endfor
+            @endforeach
 
         </div>
     </main>
