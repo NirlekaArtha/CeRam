@@ -23,11 +23,13 @@
 
   <main class="py-16 px-4 sm:px-20 flex-1 w-screen h-screen overflow-y-scroll">
     <div class="h-fit w-full">
-      <h2 class="text-3xl mb-12">
+      <h2 class="text-3xl font-semibold mb-12">
         Ubah password
       </h2>
   
-      <form action="">
+      <form action="{{ route('settings.update-security') }}" method="POST">
+        @csrf
+        @method('PUT')
         <label for="current-password" class="text-xl font-medium">
           Password saat ini
         </label>
@@ -88,7 +90,8 @@
 
       <h2 class="text-3xl font-semibold mt-32 mb-2">Log out & removal</h2>
 
-      <form action="">
+      <form action="{{ route('logout') }}" method="POST">
+        @csrf
         <p>
           Logout akan mengeluarkan anda dari akun.
           Hapus akun akan menghapus akun anda 
@@ -96,12 +99,12 @@
         </p>
 
         <div class="flex gap-8 mt-8">
-          <button type="button" class="cursor-pointer flex justify-center items-center gap-2 w-32 py-2 border rounded-md text-accent1 border-accent1">
+          <button type="submit" class="cursor-pointer flex justify-center items-center gap-2 w-32 py-2 border rounded-md text-accent1 border-accent1">
             <p class="text-sm">
               Hapus akun
             </p>
           </button>
-          <button type="button" class="cursor-pointer flex justify-center items-center gap-2 w-32 py-2 border rounded-md bg-accent1 border-accent1">
+          <button type="submit" class="cursor-pointer flex justify-center items-center gap-2 w-32 py-2 border rounded-md bg-accent1 border-accent1">
             <p class="text-sm">
               Log out
             </p>

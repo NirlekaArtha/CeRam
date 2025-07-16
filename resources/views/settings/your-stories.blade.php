@@ -28,42 +28,20 @@
     <div class="overflow-y-scroll md:overflow-y-hidden md:overflow-x-scroll h-fit pb-8 custom-scrollbar">
       <div class="flex md:flex-row items-center md:items-start flex-col gap-4 w-full h-fit md:w-fit md:h-full">
   
-        @for ($index = 0; $index < 5; $index++)
-                            
-            <x-card title="Sweet Lady" 
-                    desc="lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque alias. Lorem ipsum dolor sit amet."
-                    image="scary5.jpg"
-                    rating="4.9"
-                    votes="409"
-                    date="May, 20th 2023"
-                    link="https://www.laravel.com"/>
-                    
+          @foreach ($yourStories as $post)
 
-            <x-card title="The Butcher" 
-                    desc="lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque alias. Lorem ipsum dolor sit amet."
-                    image="scary4.jpg"
-                    rating="4.9"
-                    votes="409"
-                    date="May, 20th 2023"
-                    link="https://www.laravel.com"/>
+            <x-card 
+                image="{{ $post->image }}" 
+                title="{{ $post->title }}" 
+                desc="{{ Str::limit($post->content, 100) }}" 
+                rating="{{ $post->rating }}" 
+                votes="{{ $post->votes }}" 
+                date="{{ $post->created_at->format('d M Y') }}" 
+                link="{{ route('posts.show', ['post' => $post->slug]) }}"
+            />
 
-            <x-card title="Foggy Cabin" 
-                    desc="lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque alias. Lorem ipsum dolor sit amet."
-                    image="scary1.jpg"
-                    rating="4.9"
-                    votes="409"
-                    date="May, 20th 2023"
-                    link="https://www.laravel.com"/>
+          @endforeach
 
-            <x-card title="The Rising" 
-                    desc="lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque alias. Lorem ipsum dolor sit amet."
-                    image="scary3.jpg"
-                    rating="4.9"
-                    votes="409"
-                    date="May, 20th 2023"
-                    link="https://www.laravel.com"/>
-
-            @endfor
         </div>
       </div>
     </div>
